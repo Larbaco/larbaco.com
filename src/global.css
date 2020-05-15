@@ -1,3 +1,31 @@
-body {
-  text-align: center;
+
+a {
+  color: #b7ffa1;
+}
+a:hover {
+  color: #a1d2ff;
+}
+
+.p-card {
+  margin: 20px;
+}
+
+.p-card-image {
+  border-radius: 10px;
+  width: 300px;
+  height: 200px;
+  box-shadow: 0px 0px 3px 1px #ccc;
+}
+.p-card-info {
+  margin-top: 10px;
+  min-height: 100px;
+  max-width: 300px;
+}
+.p-card-title {
+  font-size: 24px;
+  margin: 0px;
+}
+.p-card-subtitle {
+  font-size: 14px;
+  margin: 0px;
 }

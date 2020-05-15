@@ -1,9 +1,15 @@
 import React from "react";
+import "./styles.css";
 
-export default function home() {
+import Hero from "../../components/hero";
+import Carousel from '../../components/Carousel'
+import Card from '../../components/Card'
+
+export default function home(props) {
   return (
-    <div class="container-fluid">
-      <h3>Hello World!</h3>
+    <div>
+      <Hero title={props.title} subTitle={props.subTitle} text={props.text} />
+      <Carousel />
     </div>
   );
 }
