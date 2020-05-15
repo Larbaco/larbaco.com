@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./Card";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+//import Col from "react-bootstrap/Col";
 
 import sparceMatrix from "../assets/images/sparseMatrix300x200.png";
 import portfolio from "../assets/images/portfolio300x200.png";
@@ -56,6 +56,9 @@ class Carousel extends React.Component {
     this.setState({
       items,
     });
+    if (this.state.items[id].selected !== true) {
+      window.open(this.state.items[id].link, "_blank");
+    }
   };
 
   makeItems = (items) => {

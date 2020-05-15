@@ -51,6 +51,7 @@ class App extends React.Component {
     };
   }
   render() {
+    document.title = 'Thiago Cabral'
     return (
       <Router>
         <Container className="p-0" fluid={true}>
