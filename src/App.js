@@ -11,7 +11,7 @@ import Projects from "./pages/projects";
 import Contact from "./pages/contact";
 import Resume from "./pages/resume";
 
-import './global.css'
+import "./global.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -51,82 +51,83 @@ class App extends React.Component {
     };
   }
   render() {
-    document.title = 'Thiago Cabral'
+    document.title = "Thiago Cabral";
     return (
       <Router>
-        <Container className="p-0" fluid={true}>
-          <Navbar className="border-bottom" bg="ligth" expand="lg">
-            <Navbar.Brand>Thiago Cabral</Navbar.Brand>
-            <Navbar.Toggle className="toggle" aria-controls="navbar-toggle" />
-            <Navbar.Collapse id="navbar-toggle">
-              <Nav className="ml-auto">
-                <Link className="nav-link" to="/">
-                  Home
-                </Link>
-                <Link className="nav-link" to="/projects">
-                  Projects
-                </Link>
-                <Link className="nav-link" to="/about">
-                  About
-                </Link>
-                <Link className="nav-link" to="/contact">
-                  Contact
-                </Link>
-                <Link className="nav-link" to="/resume">
-                  Resume
-                </Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Navbar>
-          <Route
-            path="/"
-            exact
-            render={() => (
-              <Home
-                title={this.state.home.title}
-                subTitle={this.state.home.subTitle}
-                text={this.state.home.text}
-              />
-            )}
-          />
-          <Route
-            path="/projects"
-            render={() => (
-              <Projects
-                title={this.state.projects.title}
-                subTitle={this.state.projects.subTitle}
-                text={this.state.projects.text}
-              />
-            )}
-          />
-          <Route
-            path="/about"
-            render={() => (
-              <About
-                title={this.state.about.title}
-                subTitle={this.state.about.subTitle}
-                text={this.state.about.text}
-              />
-            )}
-          />
-          <Route
-            path="/contact"
-            render={() => (
-              <Contact
-                title={this.state.contact.title}
-              />
-            )}
-          />
-          <Route
-            path="/resume"
-            render={() => (
-              <Resume
-                title={this.state.resume.title}
-                subTitle={this.state.resume.subTitle}
-                text={this.state.resume.text}
-              />
-            )}
-          />
+        <Container className="p-0 main-div" fluid={true}>
+          <Container className="topSide" fluid={true}>
+            <Navbar className=" sticky-top" expand="lg">
+              <Navbar.Brand>Thiago Cabral</Navbar.Brand>
+              <Navbar.Toggle className="toggle" aria-controls="navbar-toggle" />
+              <Navbar.Collapse id="navbar-toggle">
+                <Nav className="ml-auto">
+                  <Link className="nav-link" to="/">
+                    Home
+                  </Link>
+                  <Link className="nav-link" to="/projects">
+                    Projects
+                  </Link>
+                  <Link className="nav-link" to="/about">
+                    About
+                  </Link>
+                  <Link className="nav-link" to="/contact">
+                    Contact
+                  </Link>
+                  <Link className="nav-link" to="/resume">
+                    Resume
+                  </Link>
+                </Nav>
+              </Navbar.Collapse>
+            </Navbar>
+          </Container>
+          <Container className="middle" fluid={true}></Container>
+          <Container className="bottonSide" fluid={true}>
+            <Route
+              path="/"
+              exact
+              render={() => (
+                <Home
+                  title={this.state.home.title}
+                  subTitle={this.state.home.subTitle}
+                  text={this.state.home.text}
+                />
+              )}
+            />
+            <Route
+              path="/projects"
+              render={() => (
+                <Projects
+                  title={this.state.projects.title}
+                  subTitle={this.state.projects.subTitle}
+                  text={this.state.projects.text}
+                />
+              )}
+            />
+            <Route
+              path="/about"
+              render={() => (
+                <About
+                  title={this.state.about.title}
+                  subTitle={this.state.about.subTitle}
+                  text={this.state.about.text}
+                />
+              )}
+            />
+            <Route
+              path="/contact"
+              render={() => <Contact title={this.state.contact.title} />}
+            />
+            <Route
+              path="/resume"
+              render={() => (
+                <Resume
+                  title={this.state.resume.title}
+                  subTitle={this.state.resume.subTitle}
+                  text={this.state.resume.text}
+                />
+              )}
+            />
+          </Container>
           <Footer></Footer>
         </Container>
       </Router>

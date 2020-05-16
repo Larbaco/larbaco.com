@@ -20,7 +20,7 @@ class Carousel extends React.Component {
           subTitle:
             "Space invaders implementation in python and OpenGL for studies purposes",
           link: "https://github.com/Larbaco/InVaser_Spade",
-          selected: true,
+          selected: false,
         },
         {
           id: 1,
@@ -32,6 +32,22 @@ class Carousel extends React.Component {
         },
         {
           id: 2,
+          title: "Sparse Matix",
+          subTitle: "Space Matrix impelemtation for studies purposes",
+          imgSrc: sparceMatrix,
+          link: "https://github.com/Larbaco/MatrizEsparsa",
+          selected: false,
+        },
+        {
+          id: 3,
+          title: "Sparse Matix",
+          subTitle: "Space Matrix impelemtation for studies purposes",
+          imgSrc: sparceMatrix,
+          link: "https://github.com/Larbaco/MatrizEsparsa",
+          selected: false,
+        },
+        {
+          id: 4,
           title: "Sparse Matix",
           subTitle: "Space Matrix impelemtation for studies purposes",
           imgSrc: sparceMatrix,
@@ -76,7 +92,7 @@ class Carousel extends React.Component {
   render() {
     return (
       <Container fluid={true}>
-        <Row className="justify-content-around">
+        <Row className="justify-content-center">
           {this.makeItems(this.state.items)}
         </Row>
       </Container>
