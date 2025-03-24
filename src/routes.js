@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/home";
 import About from "./pages/about";
@@ -11,13 +11,13 @@ export default function () {
   document.title = "Thiago Cabral";
   return (
     <BrowserRouter>
-      <Switch>
+      <Routes>
         <Route path="/" exact component={Home} />
         <Route path="/about" exact component={About} />
         <Route path="/projects" exact component={Projects} />
         <Route path="/contact" exact component={Contact} />
         <Route path="/resume" exact component={Resume} />
-      </Switch>
+      </Routes>
     </BrowserRouter>
   );
 }

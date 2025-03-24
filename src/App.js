@@ -1,138 +1,150 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
+import React, { useState, createContext } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Container, Navbar, Nav } from "react-bootstrap";
+import { Helmet } from 'react-helmet';
 
-import Footer from "./components/footer";
+import Footer from "./components/layout/Footer";
 import Home from "./pages/home";
 import About from "./pages/about";
 import Projects from "./pages/projects";
 import Contact from "./pages/contact";
 import Resume from "./pages/resume";
-
+import NavLink from "./components/NavLink";
+import logo from './assets/images/logo.png';
 import "./global.css";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: "Thiago Cabral",
-      headerLinks: [
-        { title: "home", path: "/" },
-        { title: "projects", path: "/projects" },
-        { title: "about", path: "/about" },
-        { title: "contact", path: "/contact" },
-      ],
-      home: {
-        title: "Discover",
-        subTitle: "Some facets of me",
+export const LanguageContext = createContext();
+
+const APP_CONFIG = {
+  meta: {
+    titles: {
+      en: "Thiago Cabral",
+      pt: "Thiago Cabral"
+    },
+    defaultLanguage: "pt"
+  },
+  translations: {
+    en: {
+      menu: {
+        home: "HOME",
+        projects: "PROJECTS",
+        about: "ABOUT",
+        contact: "CONTACT",
+        resume: "RESUME"
       },
-      contact: {
-        title: "Discover",
-        subTitle: "Some facets of me",
+      content: {
+        home: {
+          title: "Discover",
+          subTitle: "Some facets of me",
+          text: "",
+          quote: "Life is fluid and fleeting, we must do our best in everything we do."
+        },
+        // Add other pages similarly
+      }
+    },
+    pt: {
+      menu: {
+        home: "INÍCIO",
+        projects: "PROJETOS",
+        about: "SOBRE",
+        contact: "CONTATO",
+        resume: "CURRÍCULO"
       },
-      projects: {
-        title: "Projects",
-        subTitle: "Some stuff that i did",
-        text: "checkout my projects below",
-      },
-      about: {
-        title: "About",
-        subTitle: "A little piece of my person",
-        text:
-          "I love tecnologies, science and challenges. I have 28 years, live in Brazil, love to learn and test all kind of tecnologies",
-      },
-      resume: {
-        title: "Resume",
-        subTitle: "My curriculum",
-        text: "checkout my projects below",
-      },
-    };
+      content: {
+        home: {
+          title: "Descubra",
+          subTitle: "Algumas facetas minhas",
+          text: "",
+          quote: "A vida é fluida e passageira, devemos dar o nosso melhor em tudo que fazemos."
+        },
+        // Add other pages similarly
+      }
+    }
   }
-  render() {
-    document.title = "Thiago Cabral";
-    return (
+};
+
+function App() {
+  const [language, setLanguage] = useState(() => {
+    return localStorage.getItem('language') || APP_CONFIG.meta.defaultLanguage;
+  });
+
+  document.title = APP_CONFIG.meta.titles[language];
+
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang);
+    localStorage.setItem('language', lang);
+  };
+
+  return (
+    <LanguageContext.Provider value={{ language, translations: APP_CONFIG.translations }}>
+      <Helmet>
+        {/* Default meta tags for entire site */}
+        <title>{APP_CONFIG.meta.titles[language]}</title>
+        <meta name="description" content="Thiago Cabral - DevOps Analyst & Full Stack Developer" />
+
+        {/* Open Graph */}
+        <meta property="og:site_name" content="Thiago Cabral Portfolio" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${process.env.PUBLIC_URL}/images/og-global.jpg`} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={`${process.env.PUBLIC_URL}/images/og-global.jpg`} />
+      </Helmet>
       <Router>
-        <Container className="p-0 main-div" fluid={true}>
-          <Container className="topSide" fluid={true}>
-            <Navbar className=" sticky-top" expand="lg">
-              <Navbar.Brand>Thiago Cabral</Navbar.Brand>
-              <Navbar.Toggle className="toggle" aria-controls="navbar-toggle" />
+        <Container className="p-0 main-div" fluid>
+          {/* Header Section */}
+          <Container className="topSide" fluid>
+            <Navbar className="sticky-top" expand="lg">
+              <Navbar.Brand>
+                <NavLink to="/" name="home">
+                  <img src={logo} alt={APP_CONFIG.meta.titles[language]} className="logo" style={{ height: '30px', width: 'auto' }} />
+                </NavLink>
+              </Navbar.Brand>
+
+              <Navbar.Toggle aria-controls="navbar-toggle" />
               <Navbar.Collapse id="navbar-toggle">
-                <Nav className="ml-auto">
-                  <Link className="nav-link" to="/">
-                    Home
-                  </Link>
-                  <Link className="nav-link" to="/projects">
-                    Projects
-                  </Link>
-                  <Link className="nav-link" to="/about">
-                    About
-                  </Link>
-                  <Link className="nav-link" to="/contact">
-                    Contact
-                  </Link>
-                  <Link className="nav-link" to="/resume">
-                    Resume
-                  </Link>
+                <Nav className="ms-auto">
+                  <NavLink to="/" name="home" />
+                  <NavLink to="/projects" name="projects" />
+                  <NavLink to="/about" name="about" />
+                  <NavLink to="/contact" name="contact" />
+                  <NavLink to="/resume" name="resume" />
+
+                  <div className="language-flags">
+                    <button className={`nav-link flag-btn ${language === 'en' ? 'active' : ''}`}
+                      onClick={() => handleLanguageChange('en')}
+                      aria-label="English">
+                      🇺🇸
+                    </button>
+                    <button className={`nav-link flag-btn ${language === 'pt' ? 'active' : ''}`}
+                      onClick={() => handleLanguageChange('pt')}
+                      aria-label="Português">
+                      🇧🇷
+                    </button>
+                  </div>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
           </Container>
-          <Container className="middle" fluid={true}></Container>
-          <Container className="bottonSide" fluid={true}>
-            <Route
-              path="/"
-              exact
-              render={() => (
-                <Home
-                  title={this.state.home.title}
-                  subTitle={this.state.home.subTitle}
-                  text={this.state.home.text}
-                />
-              )}
-            />
-            <Route
-              path="/projects"
-              render={() => (
-                <Projects
-                  title={this.state.projects.title}
-                  subTitle={this.state.projects.subTitle}
-                  text={this.state.projects.text}
-                />
-              )}
-            />
-            <Route
-              path="/about"
-              render={() => (
-                <About
-                  title={this.state.about.title}
-                  subTitle={this.state.about.subTitle}
-                  text={this.state.about.text}
-                />
-              )}
-            />
-            <Route
-              path="/contact"
-              render={() => <Contact title={this.state.contact.title} />}
-            />
-            <Route
-              path="/resume"
-              render={() => (
-                <Resume
-                  title={this.state.resume.title}
-                  subTitle={this.state.resume.subTitle}
-                  text={this.state.resume.text}
-                />
-              )}
-            />
+
+          <Container className="middle" fluid />
+          <Container className="bottomSide" fluid>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/resume" element={<Resume />} />
+            </Routes>
           </Container>
-          <Footer></Footer>
+          <Footer />
         </Container>
       </Router>
-    );
-  }
+    </LanguageContext.Provider>
+  );
 }
 
 export default App;
