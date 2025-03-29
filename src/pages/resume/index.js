@@ -71,33 +71,33 @@ export default function Resume() {
 
   // Formatted contact items
   const contactItems = [
-    { icon: faMapMarkerAlt, text: resumeData?.header?.contact?.location },
+    { icon: faMapMarkerAlt, text: resumeData?.baseInfo?.contact?.location },
     {
       icon: faPhone,
-      text: resumeData?.header?.contact?.phone,
-      url: resumeData?.header?.contact?.phone ? `tel:${resumeData.header.contact.phone.replace(/\D/g, '')}` : null
+      text: resumeData?.baseInfo?.contact?.phone,
+      url: resumeData?.baseInfo?.contact?.phone ? `tel:${resumeData.baseInfo.contact.phone.replace(/\D/g, '')}` : null
     },
     {
       icon: faEnvelope,
-      text: resumeData?.header?.contact?.email,
-      url: resumeData?.header?.contact?.email ? `mailto:${resumeData.header.contact.email}` : null
+      text: resumeData?.baseInfo?.contact?.email,
+      url: resumeData?.baseInfo?.contact?.email ? `mailto:${resumeData.baseInfo.contact.email}` : null
     },
     {
       icon: faGlobe,
-      text: resumeData?.header?.contact?.website,
-      url: resumeData?.header?.contact?.website
-        ? (resumeData.header.contact.website.includes('://')
-          ? resumeData.header.contact.website
-          : `https://${resumeData.header.contact.website}`)
+      text: resumeData?.baseInfo?.contact?.website,
+      url: resumeData?.baseInfo?.contact?.website
+        ? (resumeData.baseInfo.contact.website.includes('://')
+          ? resumeData.baseInfo.contact.website
+          : `https://${resumeData.baseInfo.contact.website}`)
         : null
     },
     {
       icon: faLinkedin,
-      text: resumeData?.header?.contact?.linkedin,
-      url: resumeData?.header?.contact?.linkedin
-        ? (resumeData.header.contact.linkedin.includes('://')
-          ? resumeData.header.contact.linkedin
-          : `https://${resumeData.header.contact.linkedin}`)
+      text: resumeData?.baseInfo?.contact?.linkedin,
+      url: resumeData?.baseInfo?.contact?.linkedin
+        ? (resumeData.baseInfo.contact.linkedin.includes('://')
+          ? resumeData.baseInfo.contact.linkedin
+          : `https://${resumeData.baseInfo.contact.linkedin}`)
         : null
     }
   ];
@@ -115,7 +115,7 @@ export default function Resume() {
             <div className="profile-picture">
               <img
                 src={`${process.env.PUBLIC_URL}/images/profile.jpg`}
-                alt={resumeData.header.name}
+                alt={resumeData.baseInfo.name}
                 onError={(e) => {
                   e.target.onerror = null;
                   e.target.src = `${process.env.PUBLIC_URL}/images/logo192.png`;
@@ -123,8 +123,8 @@ export default function Resume() {
               />
             </div>
             <div className="header-text">
-              <h1>{resumeData.header.name}</h1>
-              <p className="job-title">{resumeData.header.title}</p>
+              <h1>{resumeData.baseInfo.name}</h1>
+              <p className="job-title">{resumeData.baseInfo.title}</p>
             </div>
           </div>
 
