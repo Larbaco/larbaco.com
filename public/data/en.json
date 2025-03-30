@@ -7,30 +7,30 @@
       "phone": "+55 66 99956-4016",
       "email": "thiagoo.cabral@gmail.com",
       "website": "larbaco.com",
-      "linkedin": "linkedin.com/in/thiagoo.cabral"
+      "linkedin": "https://www.linkedin.com/in/thiagoocabral/"
     }
   },
-  "professional_summary": "DevOps Analyst and Full Stack Developer with expertise in CI/CD pipelines, Kubernetes orchestration, and ITIL-based service management. Proven experience in deployment flow optimization, incident reduction, and process automation for scalable infrastructure. Skilled in cross-functional collaboration to deliver efficient and reliable software solutions.",
+  "professional_summary": "DevOps Analyst and Full Stack Developer with expertise in CI/CD pipelines, Kubernetes orchestration, and ITIL-based service management. Proven experience in optimizing deployment workflows, reducing incidents, and automating processes for scalable infrastructure. Skilled in cross-functional collaboration to deliver efficient and reliable software solutions.",
   "technical_skills": [
     {
       "name": "OpenText Service Manager",
       "strength": 5,
-      "description": "Main tool for ITIL service management"
+      "description": "Primary tool for ITIL service management"
     },
     {
-      "name": "Operations, Monitoring and Software Management: ITIL",
+      "name": "Operations, Monitoring, and Software Management: ITIL",
       "strength": 5,
       "description": "Certified professional with daily implementation experience"
     },
     {
-      "name": "Operations, Monitoring and Software Management: IPv4 Network",
+      "name": "Operations, Monitoring, and Software Management: IPv4 Network",
       "strength": 4,
       "description": "Corporate network management with 200+ simultaneous devices"
     },
     {
-      "name": "Operations, Monitoring and Software Management: Active Directory",
+      "name": "Operations, Monitoring, and Software Management: Active Directory",
       "strength": 4,
-      "description": "Implementation of group policies for printing infrastructure"
+      "description": "Group policy implementation for print infrastructure"
     },
     {
       "name": "Security: Firewall",
@@ -61,9 +61,9 @@
       "description": [
         "Management and optimization of CI/CD pipelines for the National Mining Agency, ensuring efficient and reliable software delivery.",
         "Maintenance and implementation of CI/CD processes for .NET projects, using Kubernetes for infrastructure management.",
-        "Collaboration with development and operations teams to simplify deployment workflows and improve system reliability.",
+        "Collaboration with development and operations teams to streamline deployment workflows and improve system reliability.",
         "Use of Kubernetes for container orchestration, ensuring scalable and resilient infrastructure.",
-        "Monitoring and troubleshooting of pipelines, ensuring minimal downtime and quick resolution of deployment failures.",
+        "Monitoring and troubleshooting pipelines, minimizing downtime and ensuring rapid resolution of deployment failures.",
         "Contribution to the automation of build, test, and deployment processes, reducing manual intervention and increasing efficiency."
       ]
     },
@@ -72,9 +72,9 @@
       "dates": "2021-06 - 2024-02",
       "company": "Stefanini Brasil, Brasília, BR",
       "description": [
-        "Acted in the development and administration of the ITIL Service Management System (Micro Focus Service Manager) at the Central Bank, leading the management and maintenance of the system with a focus on efficiency and compliance with industry best practices.",
-        "Used technologies such as JavaScript, PowerShell, and RAD to optimize processes and ensure continuous system operation.",
-        "My work resulted in significant improvements in operational efficiency, aligning solutions with the dynamic demands of the corporate environment and contributing to the delivery of high-quality services."
+        "Developed and administered the ITIL Service Management System (Micro Focus Service Manager) at the Central Bank, leading system maintenance with a focus on efficiency and compliance with industry best practices.",
+        "Utilized technologies like JavaScript, PowerShell, and RAD to optimize processes and ensure continuous system operation.",
+        "Delivered significant improvements in operational efficiency, aligning solutions with dynamic corporate demands and contributing to high-quality service delivery."
       ]
     },
     {
@@ -82,9 +82,9 @@
       "dates": "2018-02 - 2020-02",
       "company": "UniCathedral University Center, Barra do Garças, BR",
       "description": [
-        "Ensured proper functioning and proposed improvements in the university's IT area to add value through planned maintenance and monitoring of various systems.",
-        "Provided hardware support for desktops and servers, monitored systems using Intelbras NVR, and managed wired and wireless networks with pfSense firewall, supporting over 500 simultaneously connected devices.",
-        "Managed network scanning multifunction printers controlled through Windows Active Directory with custom group policies."
+        "Ensured proper functioning and proposed improvements for the university's IT infrastructure through planned maintenance and system monitoring.",
+        "Provided hardware support for desktops and servers, monitored systems using Intelbras NVR, and managed wired/wireless networks with pfSense firewall, supporting 500+ simultaneous devices.",
+        "Managed network-enabled multifunction printers controlled via Windows Active Directory with custom group policies."
       ]
     },
     {
@@ -92,7 +92,7 @@
       "dates": "2017-08 - 2017-12",
       "company": "Única Consultores de Engenharia Urbana, Cuiabá, BR",
       "description": [
-        "Ensured proper functioning and proposed improvements within the office's IT scope to add value through planned maintenance and monitoring of various systems."
+        "Ensured proper functioning and proposed improvements within the office's IT scope through planned maintenance and system monitoring."
       ]
     },
     {
@@ -100,14 +100,14 @@
       "dates": "2012-09 - 2015-08",
       "company": "UFMT",
       "description": [
-        "Conducted extracurricular activities aimed at clarifying doubts and assisting students in the area of Commercial Programming Languages."
+        "Conducted extracurricular activities to clarify doubts and assist students in Commercial Programming Languages."
       ]
     }
   ],
   "education": [
     {
       "degree": "Bachelor's Degree in Computer Science",
-      "institution": "Federal University of Mato Grosso"
+      "institution": "Universidade Federal de Mato Grosso"
     }
   ],
   "certifications": [
@@ -118,11 +118,19 @@
   "projects": [
     {
       "name": "Portfolio Website - Larbaco.com",
-      "description": "A personal presentation website developed with React.js, Node.js, hosted on Firebase. The source code is available on GitHub via the link https://github.com/Larbaco/larbaco.com."
+      "description": "Modern developer portfolio built with React.js and Firebase, featuring responsive design and multilingual support (EN/PT). Implements dynamic resume rendering, project showcases with NEAT AI/sparse matrix case studies, and SEO optimization via React Helmet. Demo: https://larbaco.com | Code: https://github.com/Larbaco/larbaco.com"
+    },
+    {
+      "name": "Zelda-NeAI",
+      "description": "NES Zelda recreation with NEAT AI integration - Python game engine using the Arcade library with tile-based maps, collision systems, and multi-room transitions, designed to evolve neural networks for autonomous dungeon navigation and combat via NeuroEvolution of Augmenting Topologies (genetic algorithm). Includes sensory input processing for player/enemy positions and fitness metrics for evolutionary learning. Code: https://github.com/Larbaco/Zelda-NeAI"
+    },
+    {
+      "name": "MatrizEsparsa",
+      "description": "Academic implementation in C of sparse matrix operations using linked list storage, featuring memory-efficient addition/multiplication algorithms, CLI interface, and Python data conversion tools. Developed for high-performance computing scenarios with file I/O support and element-wise manipulation capabilities. Code: https://github.com/Larbaco/MatrizEsparsa"
     },
     {
       "name": "Resume Editor - Self-Hosted",
-      "description": "Local site for editing resume data used by the portfolio to generate a dynamic resume"
+      "description": "Bilingual (EN/PT) resume editor with Node.js/Express backend and vanilla JavaScript frontend, featuring real-time JSON data management, REST API integration, and modular CSS architecture. Supports section-based editing with validation, local persistence, and mobile-responsive UI following the 7-1 pattern with BEM methodology. Code: https://github.com/Larbaco/resume-editor"
     }
   ],
   "languages": [
