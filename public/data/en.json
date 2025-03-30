@@ -46,6 +46,11 @@
       "name": "DevOps: Kubernetes",
       "strength": 4,
       "description": "Container orchestration in critical environments, ensuring scalability and resilience for cloud applications."
+    },
+    {
+      "name": "AI Prompt Engineering",
+      "strength": 5,
+      "description": "Design and optimization of structured prompts for code generation (Python, JS, Java, C, CSS), data analysis, and image synthesis using LLMs (GPT-4, Claude, DeepSeek-R1) and Stable Diffusion models"
     }
   ],
   "experience": [

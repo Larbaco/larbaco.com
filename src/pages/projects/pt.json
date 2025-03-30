@@ -1,0 +1,32 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "Website de Portfólio - Larbaco.com",
+            "description": "Portfólio moderno para desenvolvedor construído com React.js e Firebase, apresentando design responsivo e suporte multilíngue (EN/PT). Implementa renderização dinâmica de currículos, vitrines de projetos com estudos de caso de NEAT AI/matriz esparsa, e otimização SEO através do React Helmet.",
+            "demoUrl": "https://larbaco.com",
+            "codeUrl": "https://github.com/Larbaco/larbaco.com"
+        },
+        {
+            "id": 2,
+            "title": "Zelda-NeAI",
+            "description": "Recriação do NES Zelda com integração NEAT AI - Motor de jogo em Python usando biblioteca arcade com mapas baseados em tiles, sistemas de colisão e transições entre múltiplas salas, projetado para evoluir redes neurais para navegação autônoma em masmorras e combate através de NeuroEvolução de Topologias Aumentantes (algoritmo genético). Inclui processamento de entrada sensorial para posições de jogador/inimigos e métricas de aptidão para aprendizado evolutivo.",
+            "demoUrl": "#",
+            "codeUrl": "https://github.com/Larbaco/Zelda-NeAI"
+        },
+        {
+            "id": 3,
+            "title": "MatrizEsparsa",
+            "description": "Implementação acadêmica em C de operações com matrizes esparsas usando armazenamento com lista encadeada, apresentando algoritmos de adição/multiplicação eficientes em memória, interface CLI e ferramentas de conversão de dados em Python. Desenvolvido para cenários de computação de alto desempenho com suporte a E/S de arquivos e capacidades de manipulação elemento a elemento.",
+            "demoUrl": "#",
+            "codeUrl": "https://github.com/Larbaco/MatrizEsparsa"
+        },
+        {
+            "id": 4,
+            "title": "Editor de Currículo - Auto-hospedado",
+            "description": "Editor de currículos bilíngue (EN/PT) com backend Node.js/Express e frontend vanilla JavaScript, apresentando gerenciamento de dados JSON em tempo real, integração de API REST e arquitetura CSS modular. Suporta edição por seções com validação, persistência local e UI responsiva para mobile seguindo padrão 7-1 com metodologia BEM.",
+            "demoUrl": "#",
+            "codeUrl": "https://github.com/Larbaco/resume-editor"
+        }
+    ]
+}

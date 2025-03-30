@@ -1,0 +1,32 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "Portfolio Website - Larbaco.com",
+            "description": "Modern developer portfolio built with React.js and Firebase, featuring responsive design and multilingual support (EN/PT). Implements dynamic resume rendering, project showcases with NEAT AI/sparse matrix case studies, and SEO optimization through React Helmet.",
+            "demoUrl": "https://larbaco.com",
+            "codeUrl": "https://github.com/Larbaco/larbaco.com"
+        },
+        {
+            "id": 2,
+            "title": "Zelda-NeAI",
+            "description": "NES Zelda recreation with NEAT AI integration - Python game engine using arcade library featuring tile-based maps, collision systems, and multi-room transitions, designed to evolve neural networks for autonomous dungeon navigation and combat through NeuroEvolution of Augmenting Topologies (genetic algorithm). Includes sensor input processing for player/enemy positions and fitness metrics for evolutionary learning.",
+            "demoUrl": "#",
+            "codeUrl": "https://github.com/Larbaco/Zelda-NeAI"
+        },
+        {
+            "id": 3,
+            "title": "MatrizEsparsa",
+            "description": "Academic C implementation of sparse matrix operations using linked list storage, featuring memory-efficient addition/multiplication algorithms, CLI interface, and Python data conversion tools. Developed for high-performance computing scenarios with file I/O support and element-wise manipulation capabilities.",
+            "demoUrl": "#",
+            "codeUrl": "https://github.com/Larbaco/MatrizEsparsa"
+        },
+        {
+            "id": 4,
+            "title": "Resume Editor - Self-Hosted",
+            "description": "Bilingual resume editor (EN/PT) with Node.js/Express backend and vanilla JavaScript frontend, featuring real-time JSON data management, REST API integration, and modular CSS architecture. Supports section-based editing with validation, local persistence, and mobile-responsive UI following 7-1 pattern with BEM methodology.",
+            "demoUrl": "#",
+            "codeUrl": "https://github.com/Larbaco/resume-editor"
+        }
+    ]
+}

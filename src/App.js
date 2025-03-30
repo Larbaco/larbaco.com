@@ -12,10 +12,12 @@ import Resume from "./pages/resume";
 import NavLink from "./components/NavLink";
 import logo from './assets/images/logo.png';
 import "./global.css";
+import usFlag from "./assets/images/us.png";
+import brFlag from "./assets/images/br.png";
 
 export const LanguageContext = createContext();
 
-const APP_CONFIG = {
+export const APP_CONFIG = {
   meta: {
     titles: {
       en: "Thiago Cabral",
@@ -114,15 +116,27 @@ function App() {
                   <NavLink to="/resume" name="resume" />
 
                   <div className="language-flags">
-                    <button className={`nav-link flag-btn ${language === 'en' ? 'active' : ''}`}
+                    <button
+                      className={`nav-link flag-btn ${language === 'en' ? 'active' : ''}`}
                       onClick={() => handleLanguageChange('en')}
-                      aria-label="English">
-                      🇺🇸
+                      aria-label="English"
+                    >
+                      <img
+                        src= {usFlag}
+                        alt="US"
+                        className="flag-img"
+                      />
                     </button>
-                    <button className={`nav-link flag-btn ${language === 'pt' ? 'active' : ''}`}
+                    <button
+                      className={`nav-link flag-btn ${language === 'pt' ? 'active' : ''}`}
                       onClick={() => handleLanguageChange('pt')}
-                      aria-label="Português">
-                      🇧🇷
+                      aria-label="Português"
+                    >
+                      <img
+                        src= {brFlag}
+                        alt="PT"
+                        className="flag-img"
+                      />
                     </button>
                   </div>
                 </Nav>

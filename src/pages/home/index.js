@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Container } from "react-bootstrap";
 import { LanguageContext } from "../../App";
-import Hero from "../../components/layout/Hero";
+// import Hero from "../../components/layout/Hero";
 import "./styles.css";
 
 const Home = () => {

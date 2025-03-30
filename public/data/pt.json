@@ -46,6 +46,11 @@
       "name": "DevOps: Kubernetes",
       "strength": 4,
       "description": "Orquestração de contêineres em ambientes críticos, garantindo escalabilidade e resiliência para aplicações em nuvem."
+    },
+    {
+      "name": "Engenharia de Prompt de IA",
+      "strength": 5,
+      "description": "Criação e otimização de prompts estruturados para geração de código (Python, JS, Java, C, CSS), análise de dados e síntese de imagens usando LLMs (GPT-4, Claude, DeepSeek-R1) e modelos Stable Diffusion"
     }
   ],
   "experience": [

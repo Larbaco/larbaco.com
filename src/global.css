@@ -2,7 +2,7 @@
 /* ==== Variables ======= */
 /* ====================== */
 :root {
-  --primary-bg: #534741;
+  --primary-bg: #92867f;
   --gradient-start: #3c2c52;
   --gradient-end: #75b531;
   --text-light: #adb5ba;
@@ -15,17 +15,23 @@
 /* ====================== */
 .main-div {
   display: grid;
-  grid-template-rows: auto 1vh minmax(60vh, 1fr) auto; /* Header | Divider | Content | Footer */
+  grid-template-rows: auto 1vh minmax(60vh, 1fr) auto;
   min-height: 100vh;
+  padding-top: 125px;
+  /* Adjust for fixed hero */
+  padding-bottom: 10vh;
+  /* Adjust for fixed footer */
 }
 
-.topSide {
-  background: var(--primary-bg) url("./assets/images/backgroundTop.png") no-repeat center;
-}
-
+.topSide,
 .hero-cont {
-  height: 125px;
-  background: var(--primary-bg) url("./assets/images/backgroundTop.png") no-repeat center;
+  position: fixed;
+  width: 100%;
+  height: 55px;
+  /* Minimum height */
+  background: var(--primary-bg) url("./assets/images/backgroundTop.png") no-repeat center center/cover;
+  /* Added background-size */
+  z-index: 1000;
 }
 
 .middle {
@@ -34,15 +40,22 @@
 }
 
 .bottomSide {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 75px;
   padding: 0 120px;
-  min-height: 60vh;
+  min-height: 10vh;
 }
 
 .footer-div {
-  margin-top: auto; /* Pushes footer to bottom */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  min-height: 15px;
+  background: var(--primary-bg);
+  z-index: 1000;
+  /* Ensures it stays on top */
 }
 
 /* ====================== */
@@ -73,38 +86,95 @@
   transform: scale(var(--hover-scale));
 }
 
-/* Language flags */
+/* ====================== */
+/* === Language Flags === */
+/* ====================== */
 .language-flags {
   display: flex;
-  gap: 0.5rem;
-  margin-left: 1rem;
+  gap: 0.8rem;
+  margin-left: 1.2rem;
+  align-items: center;
 }
 
 .flag-btn {
   background: none;
   border: none;
   padding: 0;
-  font-size: 1.2rem;
   cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.flag-btn:hover {
-  transform: scale(1.2);
-}
-
-.flag-btn.active {
   position: relative;
+  transition: all 0.2s ease;
 }
 
-.flag-btn.active::after {
+.flag-img {
+  width: 24px;
+  height: 18px;
+  /* 4:3 aspect ratio */
+  object-fit: cover;
+  border-radius: 1px;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+
+/* Underline Animation */
+.flag-btn::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: 3px;
+  /* Closer to flag */
   left: 0;
   width: 100%;
-  height: 2px;
+  height: 1.5px;
   background: var(--gradient-end);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover Effects */
+.flag-btn:hover .flag-img {
+  opacity: 1;
+}
+
+.flag-btn:hover::after {
+  transform: scaleX(0.7);
+}
+
+/* Active Language */
+.flag-btn.active::after {
+  transform: scaleX(0.9);
+  background: linear-gradient(to right,
+      var(--gradient-start),
+      var(--gradient-end));
+  height: 2px;
+  bottom: 3px;
+}
+
+.flag-btn.active .flag-img {
+  opacity: 1;
+  filter: saturate(1.2);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .language-flags {
+    gap: 0.6rem;
+    margin-left: 0.8rem;
+  }
+
+  .flag-img {
+    width: 20px;
+    height: 15px;
+  }
+
+  .flag-btn::after {
+    bottom: -2px;
+    height: 1px;
+  }
+
+  .flag-btn.active::after {
+    height: 1.5px;
+    bottom: -1px;
+  }
 }
 
 /* Mobile menu */
@@ -166,7 +236,8 @@
   align-items: center;
 }
 
-.home-icons, .center-icon {
+.home-icons,
+.center-icon {
   border: none;
   border-radius: 50%;
   transition: transform 0.3s ease;
@@ -184,7 +255,8 @@
   padding: 10px;
 }
 
-.home-icons:hover, .center-icon:hover {
+.home-icons:hover,
+.center-icon:hover {
   transform: scale(var(--hover-scale));
 }
 
@@ -196,7 +268,7 @@
     padding: 0 2rem;
     grid-template-rows: auto;
   }
-  
+
   .language-flags {
     margin-left: 0;
     justify-content: center;
@@ -209,7 +281,7 @@
     padding: 0 1rem;
     margin-top: 2rem;
   }
-  
+
   .navbar-light .navbar-nav .nav-link {
     padding: 0.5rem 0;
   }
