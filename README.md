@@ -45,16 +45,29 @@ A modern personal portfolio website featuring multilingual support (English/Port
 ## 📂 Project Structure
 
 ```bash
-├── public/
-│   ├── data/            # JSON files for resume content
-│   └── images/          # Static assets
-├── src/
-│   ├── components/      # Reusable UI components
-│   ├── config/          # FontAwesome initialization
-│   ├── pages/           # Route components
-│   ├── App.js           # Main application logic
-│   ├── routes.js        # Router configuration
-│   └── index.js         # React entry point
+📁 larbaco.com
+├── 📂 public/             # Static files
+│   ├── manifest.json
+│   ├── robots.txt
+│   └── README.md
+│
+├── 📂 src/
+│   ├── 📂 assets/images/  # All visual assets
+│   ├── 📂 components/     # Reusable components
+│   │   ├── cards/
+│   │   ├── carousel/
+│   │   └── layout/
+│   │
+│   ├── 📂 pages/          # Page components
+│   │   ├── about/
+│   │   ├── contact/
+│   │   ├── home/
+│   │   ├── projects/      # (Multi-language JSON files)
+│   │   └── resume/        # Sub-application
+│   │
+│   ├── config/            # Configuration files
+│   ├── routes.js          # Main routing
+│   └── index.js           # Entry point
 ```
 
 ---
