@@ -1,0 +1,102 @@
+/* ====== ESTILOS ATIVOS DURANTE IMPRESSÃO ====== */
+.resume.print-active {
+    background: white !important;
+    min-height: auto !important;
+    width: 210mm !important;
+    border: #000 !important;
+    /* border-width: 2px !important; */
+}
+
+.resume.print-active .container {
+    box-shadow: none !important;
+    padding: 3px !important;
+}
+
+.resume.print-active .header {
+    background: white !important;
+    box-shadow: none !important;
+}
+
+.bottomSide.print-active {
+    padding: 0 !important;
+    margin-top: -20px !important;
+    /* display: block !important; */
+}
+
+.resume.print-active .header .logo {
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.resume .timeline-content,
+.resume .project-item,
+.resume .languages,
+.resume .certifications {
+    /* avoid page break */
+    page-break-inside: avoid !important;
+}
+
+
+.resume.print-active .section {
+    /* page-break-inside: auto; */
+    background: white !important;
+    box-shadow: none !important;
+    margin-bottom: 8px !important;
+}
+
+.resume.print-active .section-header {
+    color: #000 !important;
+    /* font-size: 1.3em !important; */
+    cursor: auto !important;
+}
+
+.resume.print-active .item-date {
+    background: #f0f0f0 !important;
+}
+
+.resume.print-active .skill-strength {
+    display: none !important;
+}
+
+/* Fontes otimizadas para impressão */
+.resume.print-active {
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 12pt;
+    line-height: 1.4 !important;
+    text-align: justify !important;
+}
+
+.resume.print-active h1 {
+    font-size: 20pt !important;
+}
+
+.resume.print-active h2 {
+    font-size: 16pt !important;
+}
+
+.resume.print-active h3 {
+    font-size: 15pt !important;
+}
+
+.resume.print-active h4 {
+    font-size: 14pt !important;
+}
+
+/* Garantir que o botão e seus estados estão completamente escondidos */
+.resume.print-active .print-btn,
+.footer-div.print-active,
+.topSide.print-active,
+.resume.print-active .resume-print-control,
+.resume.print-active .print-btn:focus,
+.resume.print-active .print-btn:hover {
+    display: none;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+@page {
+    margin: 1cm;
+    size: A4;
+}

@@ -13,6 +13,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import './styles.css';
+import './print.css';
+import PrintButton from '../../components/PrintButton';
 
 export default function Resume() {
   // Component state
@@ -36,8 +38,8 @@ export default function Resume() {
     const loadResumeData = async () => {
       try {
         const response = await fetch(`${process.env.PUBLIC_URL}/data/${language}.json`);
-        if (!response.ok) throw new Error(language === 'pt' 
-          ? 'Falha ao carregar dados do currículo' 
+        if (!response.ok) throw new Error(language === 'pt'
+          ? 'Falha ao carregar dados do currículo'
           : 'Failed to load resume data');
         const data = await response.json();
         setResumeData(data);
@@ -111,6 +113,9 @@ export default function Resume() {
       <div className="container">
         {/* Header */}
         <header className="header">
+          <div className="resume-print-control">
+            <PrintButton />
+          </div>
           <div className="header-left">
             <div className="profile-picture">
               <img
@@ -249,7 +254,7 @@ export default function Resume() {
 
         {/* Certifications Section */}
         {resumeData.certifications && (
-          <section className="section">
+          <section className="section certifications">
             <h2
               onClick={() => toggleSection('certifications')}
               className={`section-header ${collapsedSections.certifications ? 'collapsed' : ''}`}
@@ -299,7 +304,7 @@ export default function Resume() {
 
         {/* Languages Section */}
         {resumeData.languages && (
-          <section className="section">
+          <section className="section languages">
             <h2
               onClick={() => toggleSection('languages')}
               className={`section-header ${collapsedSections.languages ? 'collapsed' : ''}`}

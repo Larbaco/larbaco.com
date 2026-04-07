@@ -155,7 +155,7 @@
 }
 
 /* Mobile Optimization */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .language-flags {
     gap: 0.6rem;
     margin-left: 0.8rem;
@@ -276,7 +276,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .bottomSide {
     padding: 0 1rem;
     margin-top: 2rem;

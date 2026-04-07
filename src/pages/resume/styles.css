@@ -402,7 +402,7 @@
 }
 
 /* ====== RESPONSIVE DESIGN ====== */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .resume .header {
     flex-direction: column;
     text-align: center;
@@ -467,5 +467,47 @@
   .resume .item-block {
     margin-left: 1rem;
     padding-left: 1rem;
+  }
+}
+
+/* ====== BOTÃO DE IMPRESSÃO NO CURRÍCULO ====== */
+.resume-print-control {
+  position: absolute;
+  top: 10px;
+  right: 600px;
+  z-index: 1009;
+}
+
+.resume .print-btn {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  color: white !important;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.resume .print-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+  .resume-print-control {
+    position: static;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .resume .print-btn {
+    width: 100%;
+    padding: 10px !important;
   }
 }
