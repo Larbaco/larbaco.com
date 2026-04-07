@@ -37,7 +37,7 @@ export default function Resume() {
   useEffect(() => {
     const loadResumeData = async () => {
       try {
-        const response = await fetch(`${process.env.PUBLIC_URL}/data/${language}.json`);
+        const response = await fetch(`${import.meta.env.BASE_URL}data/${language}.json`);
         if (!response.ok) throw new Error(language === 'pt'
           ? 'Falha ao carregar dados do currículo'
           : 'Failed to load resume data');
@@ -119,11 +119,11 @@ export default function Resume() {
           <div className="header-left">
             <div className="profile-picture">
               <img
-                src={`${process.env.PUBLIC_URL}/images/profile.jpg`}
+                src={`${import.meta.env.BASE_URL}images/profile.jpg`}
                 alt={resumeData.baseInfo.name}
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = `${process.env.PUBLIC_URL}/images/logo192.png`;
+                  e.target.src = `${import.meta.env.BASE_URL}images/logo192.png`;
                 }}
               />
             </div>

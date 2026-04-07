@@ -3,16 +3,21 @@ import { Container } from "react-bootstrap";
 import { LanguageContext } from "../../App";
 // import Hero from "../../components/layout/Hero";
 import "./styles.css";
+import toolIcon from "../../assets/images/tool.png";
+import codeIcon from "../../assets/images/code.png";
+import thiagoImg from "../../assets/images/thiago.jpg";
+import heartIcon from "../../assets/images/heart.png";
+import githubIcon from "../../assets/images/github.png";
 
 const Home = () => {
   const { language, translations } = useContext(LanguageContext);
   const content = translations[language].content.home;
   const images = [
-    { id: 0, src: require("../../assets/images/tool.png"), className: "home-icons" },
-    { id: 1, src: require("../../assets/images/code.png"), className: "home-icons" },
-    { id: 2, src: require("../../assets/images/thiago.jpg"), className: "center-icon" },
-    { id: 3, src: require("../../assets/images/heart.png"), className: "home-icons" },
-    { id: 4, src: require("../../assets/images/github.png"), className: "home-icons" }
+    { id: 0, src: toolIcon, className: "home-icons" },
+    { id: 1, src: codeIcon, className: "home-icons" },
+    { id: 2, src: thiagoImg, className: "center-icon" },
+    { id: 3, src: heartIcon, className: "home-icons" },
+    { id: 4, src: githubIcon, className: "home-icons" }
   ];
 
   return (

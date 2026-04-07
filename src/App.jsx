@@ -87,13 +87,13 @@ function App() {
         {/* Open Graph */}
         <meta property="og:site_name" content="Thiago Cabral Portfolio" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${process.env.PUBLIC_URL}/images/og-global.jpg`} />
+        <meta property="og:image" content={`${import.meta.env.BASE_URL}images/og-global.jpg`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={`${process.env.PUBLIC_URL}/images/og-global.jpg`} />
+        <meta name="twitter:image" content={`${import.meta.env.BASE_URL}images/og-global.jpg`} />
       </Helmet>
       <Router>
         <Container className="p-0 main-div" fluid>
