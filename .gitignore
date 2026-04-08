@@ -30,3 +30,30 @@ firebase-debug.*
 .claude/
 docs/
 CLAUDE.md
+.ralph/console-2026-04-08T13-22-34-504Z.log
+.ralph/dev-server.log
+.ralph/mockup-refined.html
+.ralph/mockup.html
+.ralph/page-2026-04-08T13-22-34-843Z.yml
+.ralph/page-2026-04-08T13-23-52-478Z.png
+.ralph/ralph-20260407-200721.log
+.ralph/ralph-20260407-201110.log
+.ralph/ralph-20260407-201520.log
+.ralph/ralph-20260407-202036.log
+.ralph/ralph-iter-1-err.log
+.ralph/ralph-iter-1.log
+.ralph/ralph-test.log
+.ralph/screenshots/verify-all-pages-0-home.png
+.ralph/screenshots/verify-all-pages.png
+
+# Claude MCP
+.mcp.json
+
+# Ralph loop tool
+.ralph/
+
+# Personal/IDE files
+PROMPT.md
+ralph.ps1
+ralph.sh
+refined-mockup.png
