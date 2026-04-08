@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPrint } from '@fortawesome/free-solid-svg-icons';
 
 export default function PrintButton() {
     const handlePrint = () => {
@@ -36,12 +37,12 @@ export default function PrintButton() {
     };
 
     return (
-        <Button
+        <button
             onClick={handlePrint}
             className="print-btn"
             aria-label="Print resume"
         >
-            Print CV
-        </Button>
+            <FontAwesomeIcon icon={faPrint} />
+        </button>
     );
 }

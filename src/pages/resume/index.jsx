@@ -113,9 +113,6 @@ export default function Resume() {
       <div className="container">
         {/* Header */}
         <header className="header">
-          <div className="resume-print-control">
-            <PrintButton />
-          </div>
           <div className="header-left">
             <div className="profile-picture">
               <img
@@ -323,6 +320,9 @@ export default function Resume() {
             </div>
           </section>
         )}
+      </div>
+      <div className="resume-print-control">
+        <PrintButton />
       </div>
     </div>
   );
