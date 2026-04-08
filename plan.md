@@ -9,6 +9,7 @@ Improve and maintain the larbaco.com portfolio site (React + Vite + Bootstrap). 
 
 ## Task List
 
+### Testing Tasks (Original)
 ```json
 [
   {
@@ -68,10 +69,14 @@ Improve and maintain the larbaco.com portfolio site (React + Vite + Bootstrap). 
 ]
 ```
 
+### Redesign Tasks (Active)
+See `.ralph/plan-redesign.md` for complete redesign implementation plan with 11 tasks
+
 ---
 
 ## Agent Instructions
 
+### For Testing Tasks
 1. Read `activity.md` first to understand current state
 2. Find next task with `"passes": false`
 3. Complete all steps for that task
@@ -79,6 +84,17 @@ Improve and maintain the larbaco.com portfolio site (React + Vite + Bootstrap). 
 5. Update task to `"passes": true`
 6. Log completion in `activity.md`
 7. Repeat until all tasks pass
+
+### For Redesign Tasks
+1. Read `.ralph/activity-redesign.md` first to understand current state
+2. Find next task with `"passes": false` in `.ralph/plan-redesign.md`
+3. Complete all steps for that task
+4. Update corresponding CSS files
+5. Test changes in browser via Playwright
+6. Take screenshots of each section
+7. Update task to `"passes": true` in `.ralph/plan-redesign.md`
+8. Log completion in `.ralph/activity-redesign.md`
+9. Repeat until all tasks pass
 
 **Important:** Only modify the `passes` field. Do not remove or rewrite tasks.
 
