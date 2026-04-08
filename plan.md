@@ -43,7 +43,7 @@ Improve and maintain the larbaco.com portfolio site (React + Vite + Bootstrap). 
       "Click print button and verify print dialog triggers",
       "Check print CSS applies correctly"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "feature",
