@@ -1,6 +1,5 @@
 import React, { useState, createContext } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Container, Navbar, Nav } from "react-bootstrap";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 
 import Footer from "./components/layout/Footer";
@@ -96,56 +95,63 @@ function App() {
         <meta name="twitter:image" content={`${import.meta.env.BASE_URL}images/og-global.jpg`} />
       </Helmet>
       <Router>
-        <Container className="p-0 main-div" fluid>
+        <div className="main-div">
           {/* Header Section */}
-          <Container className="topSide" fluid>
-            <Navbar className="sticky-top" expand="lg">
-              <Navbar.Brand>
-                <NavLink to="/" name="home">
-                  <img src={logo} alt={APP_CONFIG.meta.titles[language]} className="logo" style={{ height: '30px', width: 'auto' }} />
-                </NavLink>
-              </Navbar.Brand>
+          <div className="topSide">
+            <nav className="navbar">
+              <div className="navbar-brand">
+                <Link to="/">
+                  <div className="status-dot"></div>
+                  <img src={logo} alt={APP_CONFIG.meta.titles[language]} style={{ height: '30px', width: 'auto' }} />
+                </Link>
+              </div>
 
-              <Navbar.Toggle aria-controls="navbar-toggle" />
-              <Navbar.Collapse id="navbar-toggle">
-                <Nav className="ms-auto">
+              <ul className="navbar-nav">
+                <li>
                   <NavLink to="/" name="home" />
+                </li>
+                <li>
                   <NavLink to="/projects" name="projects" />
+                </li>
+                <li>
                   <NavLink to="/about" name="about" />
+                </li>
+                <li>
                   <NavLink to="/contact" name="contact" />
+                </li>
+                <li>
                   <NavLink to="/resume" name="resume" />
+                </li>
+              </ul>
 
-                  <div className="language-flags">
-                    <button
-                      className={`nav-link flag-btn ${language === 'en' ? 'active' : ''}`}
-                      onClick={() => handleLanguageChange('en')}
-                      aria-label="English"
-                    >
-                      <img
-                        src= {usFlag}
-                        alt="US"
-                        className="flag-img"
-                      />
-                    </button>
-                    <button
-                      className={`nav-link flag-btn ${language === 'pt' ? 'active' : ''}`}
-                      onClick={() => handleLanguageChange('pt')}
-                      aria-label="Português"
-                    >
-                      <img
-                        src= {brFlag}
-                        alt="PT"
-                        className="flag-img"
-                      />
-                    </button>
-                  </div>
-                </Nav>
-              </Navbar.Collapse>
-            </Navbar>
-          </Container>
+              <div className="language-flags">
+                <button
+                  className={`flag-btn ${language === 'en' ? 'active' : ''}`}
+                  onClick={() => handleLanguageChange('en')}
+                  aria-label="English"
+                >
+                  <img
+                    src={usFlag}
+                    alt="US"
+                    className="flag-img"
+                  />
+                </button>
+                <button
+                  className={`flag-btn ${language === 'pt' ? 'active' : ''}`}
+                  onClick={() => handleLanguageChange('pt')}
+                  aria-label="Português"
+                >
+                  <img
+                    src={brFlag}
+                    alt="PT"
+                    className="flag-img"
+                  />
+                </button>
+              </div>
+            </nav>
+          </div>
 
-          <Container className="middle" fluid />
-          <Container className="bottomSide" fluid>
+          <div className="bottomSide">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
@@ -153,9 +159,9 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/resume" element={<Resume />} />
             </Routes>
-          </Container>
+          </div>
           <Footer />
-        </Container>
+        </div>
       </Router>
     </LanguageContext.Provider>
   );

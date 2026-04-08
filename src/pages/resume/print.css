@@ -4,58 +4,137 @@
     min-height: auto !important;
     width: 210mm !important;
     border: #000 !important;
-    /* border-width: 2px !important; */
 }
 
-.resume.print-active .container {
+.resume.print-active .page-container {
+    background: white !important;
+    color: #000 !important;
+    border: 1px solid #ccc !important;
     box-shadow: none !important;
-    padding: 3px !important;
+    padding: 0 !important;
+}
+
+.resume.print-active .resume {
+    background: white !important;
+    color: #000 !important;
+    line-height: 1.6 !important;
 }
 
 .resume.print-active .header {
     background-color: white !important;
-    box-shadow: none !important;
+    border-bottom: 1px solid #ccc !important;
+    color: #000 !important;
 }
 
-.bottomSide.print-active {
-    padding: 0 !important;
-    margin-top: -20px !important;
-    /* display: block !important; */
+.resume.print-active .header h1 {
+    color: #000 !important;
 }
 
-.resume.print-active .header .logo {
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
+.resume.print-active .header-text .job-title {
+    color: #333 !important;
 }
 
-.resume .timeline-content,
-.resume .project-item,
-.resume .languages,
-.resume .certifications {
-    /* avoid page break */
-    page-break-inside: avoid !important;
+.resume.print-active .contact-info {
+    color: #000 !important;
 }
 
+.resume.print-active .contact-info a {
+    color: #000 !important;
+}
+
+.resume.print-active .contact-info a:hover {
+    color: #333 !important;
+}
 
 .resume.print-active .section {
     background-color: white !important;
-    box-shadow: none !important;
-    margin-bottom: 8px !important;
+    color: #000 !important;
+    border-bottom: 1px solid #eee !important;
+    margin-bottom: 1rem !important;
 }
 
 .resume.print-active .section-header {
     color: #000 !important;
-    /* font-size: 1.3em !important; */
-    cursor: auto !important;
+}
+
+.resume.print-active .section-header::before {
+    color: #000 !important;
+}
+
+.resume.print-active .timeline-line {
+    background: #000 !important;
+}
+
+.resume.print-active .timeline-dot {
+    background: #000 !important;
+    border: 3px solid white !important;
+}
+
+.resume.print-active .timeline-content {
+    background: white !important;
+    border: 1px solid #ddd !important;
+    color: #000 !important;
 }
 
 .resume.print-active .item-date {
-    background: #f0f0f0 !important;
+    background-color: #f5f5f5 !important;
+    color: #000 !important;
 }
 
-.resume.print-active .skill-strength {
+.resume.print-active .item-title {
+    color: #000 !important;
+}
+
+.resume.print-active .item-company {
+    color: #333 !important;
+}
+
+.resume.print-active .item-description {
+    color: #000 !important;
+}
+
+.resume.print-active .item-description p::before {
+    background: #000 !important;
+}
+
+.resume.print-active .skill-item {
+    background: white !important;
+    color: #000 !important;
+    border: 1px solid #ddd !important;
+}
+
+.resume.print-active .strength-dot {
+    background: #e0e0e0 !important;
+}
+
+.resume.print-active .strength-dot.filled {
+    background: #000 !important;
+}
+
+.resume.print-active .certification-item {
+    color: #000 !important;
+    border-bottom: 1px solid #eee !important;
+}
+
+.resume.print-active .cert-icon {
+    color: #000 !important;
+}
+
+.resume.print-active .project-technologies {
+    color: #000 !important;
+}
+
+.resume.print-active .lang-icon {
+    color: #000 !important;
+}
+
+.resume.print-active .print-btn,
+.resume.print-active .resume-print-control,
+.resume.print-active .footer-content {
+    display: none !important;
+}
+
+.resume.print-active .resume .section-header.collapsed::after {
     display: none !important;
 }
 
@@ -83,16 +162,18 @@
     font-size: 14pt !important;
 }
 
-/* Garantir que o botão e seus estados estão completamente escondidos */
-.resume.print-active .print-btn,
-.footer-div.print-active,
-.topSide.print-active,
-.resume.print-active .resume-print-control,
-.resume.print-active .print-btn:focus,
-.resume.print-active .print-btn:hover {
-    display: none;
-    outline: none !important;
-    box-shadow: none !important;
+.resume.print-active .item-title {
+    font-size: 1.1em !important;
+}
+
+.resume.print-active .item-company {
+    font-size: 0.95em !important;
+    font-weight: 500 !important;
+}
+
+.resume.print-active .item-description p {
+    font-size: 0.95em !important;
+    margin-bottom: 0.75em !important;
 }
 
 @page {

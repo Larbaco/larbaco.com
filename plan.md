@@ -50,7 +50,7 @@ Redesign larbaco.com with a GitHub Dark Theme-inspired design system. Replace Bo
       "Remove old global variables (--primary-bg, --gradient-start, --gradient-end, --text-light, --text-dark, --hover-scale)",
       "Update resume/styles.css :root to use the shared tokens instead of its own independent set"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "layout",
@@ -64,7 +64,7 @@ Redesign larbaco.com with a GitHub Dark Theme-inspired design system. Replace Bo
       "Replace Bootstrap utility classes: sticky-top → custom CSS, ms-auto → margin-left: auto, nav-link → custom .nav-link class, active → .nav-link.active",
       "Ensure mobile hamburger menu works without Bootstrap's collapse JS (use CSS-only or minimal React state toggle)"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "layout",
@@ -75,7 +75,7 @@ Redesign larbaco.com with a GitHub Dark Theme-inspired design system. Replace Bo
       "Replace utility classes: border-top → border-top: 1px solid var(--border-default), justify-content-between → flex justify, p-1/m-0/p-0 → spacing tokens",
       "Ensure footer text uses text-secondary color, links use text-secondary with hover:text-primary"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "foundation",
@@ -87,7 +87,7 @@ Redesign larbaco.com with a GitHub Dark Theme-inspired design system. Replace Bo
       "Update .bottomSide: remove padding-bottom: 10vh hack, use padding-bottom equal to footer height + spacing",
       "Keep both topSide and footer as position: fixed with z-index 1000"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "components",
@@ -100,7 +100,7 @@ Redesign larbaco.com with a GitHub Dark Theme-inspired design system. Replace Bo
       "Replace Bootstrap utility classes: p-0, justify-content-center, text-center, p-5, fluid → custom CSS using spacing tokens",
       "In home/index.jsx, remove Container import, use a custom .page-container class with max-width and auto margins"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "components",
@@ -116,7 +116,7 @@ Redesign larbaco.com with a GitHub Dark Theme-inspired design system. Replace Bo
       "Replace utility classes: px-0, g-4, h-100, btn → custom CSS",
       "Ensure project images have border-radius --radius-md and dark background fallback"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "components",
@@ -131,7 +131,7 @@ Redesign larbaco.com with a GitHub Dark Theme-inspired design system. Replace Bo
       "Update contact icon colors to use muted versions (text-secondary with opacity)",
       "Update print.css: override dark tokens to white/black for printing (bg white, text black, borders light gray)"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "components",
@@ -142,7 +142,7 @@ Redesign larbaco.com with a GitHub Dark Theme-inspired design system. Replace Bo
       "Add consistent .page-container class to both pages: max-width 900px, margin auto, padding --space-6 on each side",
       "Ensure all headings use the type scale tokens, all body text uses text-secondary"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "cleanup",
@@ -155,7 +155,7 @@ Redesign larbaco.com with a GitHub Dark Theme-inspired design system. Replace Bo
       "Run npm run build and verify zero errors",
       "Check all 5 pages in browser: no layout breaks, no missing styles, no console errors"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "verification",
@@ -167,7 +167,7 @@ Redesign larbaco.com with a GitHub Dark Theme-inspired design system. Replace Bo
       "Test language toggle (EN/PT) at mobile viewport — verify flags are accessible",
       "Take a screenshot at each breakpoint"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "verification",
@@ -179,7 +179,7 @@ Redesign larbaco.com with a GitHub Dark Theme-inspired design system. Replace Bo
       "Verify print button works on resume page in preview build",
       "Verify language switching works in preview build"
     ],
-    "passes": false
+    "passes": true
   }
 ]
 ```

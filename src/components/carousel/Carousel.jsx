@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Card from "../cards/Card";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
 import spaceInvadersImg from "../../assets/images/spaceInvaders300x200.png";
 import portfolioImg from "../../assets/images/portfolio300x200.png";
 import sparseMatrixImg from "../../assets/images/sparseMatrix300x200.png";
@@ -39,17 +37,17 @@ function Carousel() {
       ...item,
       selected: item.id === id ? !item.selected : false
     }));
-    
+
     setItems(updatedItems);
-    
+
     if (updatedItems[id].selected) {
       window.open(updatedItems[id].link, "_blank");
     }
   };
 
   return (
-    <Container fluid>
-      <Row className="justify-content-center">
+    <div className="carousel-container">
+      <div className="carousel-row">
         {items.map(item => (
           <Card
             key={item.id}
@@ -57,8 +55,8 @@ function Carousel() {
             onClick={handleCardClick}
           />
         ))}
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 }
 

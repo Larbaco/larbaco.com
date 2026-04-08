@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Container } from "react-bootstrap";
 import { LanguageContext } from "../../App";
 // import Hero from "../../components/layout/Hero";
 import "./styles.css";
@@ -21,16 +20,16 @@ const Home = () => {
   ];
 
   return (
-    <Container className="cardsHome" fluid>
-      <Container className="home-icons-div">
+    <div className="page-container home-page">
+      <div className="home-icons-div">
         {images.map((img) => (
           <img key={img.id} src={img.src} alt="" className={img.className} />
         ))}
-      </Container>
-      <Container className="resumoHome text-center p-5">
+      </div>
+      <div className="resumoHome">
         <h3>{content.quote}</h3>
-      </Container>
-    </Container>
+      </div>
+    </div>
   );
 };
 
