@@ -2,7 +2,7 @@
 
 ## Current Status
 **Last Updated:** 2026-04-08
-**Tasks Completed:** 1 / 5 (Original Testing Tasks)
+**Tasks Completed:** 2 / 5 (Original Testing Tasks)
 **Current Task:** None
 
 ---
@@ -18,6 +18,16 @@
   - Missing `favicon.ico` 404 (cosmetic, no impact)
 - Screenshot saved: `screenshots/verify-all-pages-0-home.png`
 - Screenshot shows home hero carousel rendering with logo, navbar, and language flags
+
+### 2026-04-08 — Task 2: Test language switching (EN/PT)
+- Verified language flags (US and PT) render correctly in the navbar
+- Switched to EN: all menu labels translated (HOME, PROJECTS, ABOUT, CONTACT, RESUME), home quote changed to English
+- Navigated to /projects in EN: project titles and descriptions displayed in English
+- Switched to PT: all menu labels reverted to Portuguese (INÍCIO, PROJETOS, SOBRE, CONTATO, CURRÍCULO), project content in Portuguese
+- Confirmed localStorage stores `language` key correctly (`"pt"` after switching)
+- Reloaded page at /projects: language persisted as PT after reload
+- No unexpected console errors (only known React Helmet deprecation warning)
+- Screenshot saved: `screenshots/test-language-switching.png`
 
 ---
 

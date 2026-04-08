@@ -32,7 +32,7 @@ Improve and maintain the larbaco.com portfolio site (React + Vite + Bootstrap). 
       "Switch back to EN and verify content restores",
       "Check localStorage persistence across reload"
     ],
-    "passes": false
+    "passes": true
   },
   {
     "category": "feature",
