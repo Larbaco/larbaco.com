@@ -4,24 +4,10 @@ import { faPrint } from '@fortawesome/free-solid-svg-icons';
 
 export default function PrintButton() {
     const handlePrint = () => {
-        const resumeContainer = document.querySelector('.resume');
-
-        // 1. Expand all collapsed sections
-        document.querySelectorAll('.section-header.collapsed').forEach(header => {
-            header.click();
-        });
-
-        // 2. Set up print cleanup
-        const cleanUp = () => {
-            resumeContainer?.classList.remove('print-active');
-            window.removeEventListener('afterprint', cleanUp);
-        };
-        window.addEventListener('afterprint', cleanUp);
-
-        // 3. Trigger print after transition completes
-        setTimeout(() => {
-            window.print();
-        }, 400);
+        // No need to expand sections — print.css forces all content visible via @media print.
+        // The browser takes a snapshot for the print dialog, so collapsed sections
+        // appear fully expanded in the printout without any DOM manipulation.
+        window.print();
     };
 
     return (

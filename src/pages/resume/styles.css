@@ -1,23 +1,7 @@
 /* ====== GLOBAL VARIABLES ====== */
 :root {
-  /* Inherit from global.css */
-  --bg-canvas: #0d1117;
-  --bg-surface: #161b22;
-  --border-default: #30363d;
-  --text-primary: #e6edf3;
-  --text-secondary: #8b949e;
-  --accent-green: #00ff9d;
-  --accent-blue: #58a6ff;
-  
-  /* Fallbacks if not in global.css */
+  /* Only variables not already defined in global.css */
   --transition-speed: 0.3s;
-  --transition-normal: 0.3s;
-  --transition-fast: 0.15s;
-  --radius-md: 6px;
-  --radius-lg: 10px;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.2);
-  --shadow-lg: 0 8px 24px rgba(0,0,0,0.3);
 }
 
 /* ====== BASE STYLES ====== */

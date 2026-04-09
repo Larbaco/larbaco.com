@@ -69,6 +69,31 @@
     background: #000 !important;
   }
 
+  /* Unfilled skill dots — light gray for visibility on white paper */
+  .resume .strength-dot {
+    background: #ccc !important;
+  }
+
+  /* Timeline vertical line — light gray */
+  .resume .experience-timeline::before {
+    background: #ccc !important;
+  }
+
+  /* Section headers — remove interactive styling in print */
+  .resume .section-header {
+    cursor: default !important;
+    user-select: auto !important;
+    outline: none !important;
+  }
+
+  /* Show URLs after links for print reference */
+  .resume .contact-info a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #555 !important;
+    word-break: break-all;
+  }
+
   /* Remove hover/transition effects */
   .resume .section,
   .resume .section-header,
@@ -77,5 +102,31 @@
   .resume .timeline-dot {
     transition: none !important;
     transform: none !important;
+  }
+
+  /* Avoid breaking inside sections and items */
+  .resume .section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .resume .timeline-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .resume .education-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .resume .skill-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .resume .project-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }
