@@ -6,7 +6,7 @@
 
 A modern personal portfolio website featuring multilingual support (English/Portuguese), responsive design, and dynamic content loading. Built with React.js and Bootstrap, deployed on Firebase Hosting.
 
-![Website Preview](public/images/og-global.jpg)
+
 
 ---
 

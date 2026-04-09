@@ -1,182 +1,81 @@
-/* ====== ESTILOS ATIVOS DURANTE IMPRESSÃO ====== */
-.resume.print-active {
-    background: white !important;
-    min-height: auto !important;
-    width: 210mm !important;
-    border: #000 !important;
-}
+/* ====== PRINT OVERRIDES ====== */
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
 
-.resume.print-active .page-container {
-    background: white !important;
-    color: #000 !important;
-    border: 1px solid #ccc !important;
-    box-shadow: none !important;
+  /* Hide non-resume page elements */
+  .topSide,
+  .hero-cont,
+  .footer-div {
+    display: none !important;
+  }
+
+  /* Reset bottomSide layout for print (resume lives inside it) */
+  .bottomSide {
+    display: block !important;
+    position: static !important;
     padding: 0 !important;
-}
+    min-height: auto !important;
+  }
 
-.resume.print-active .resume {
-    background: white !important;
-    color: #000 !important;
-    line-height: 1.6 !important;
-}
-
-.resume.print-active .header {
-    background-color: white !important;
-    border-bottom: 1px solid #ccc !important;
-    color: #000 !important;
-}
-
-.resume.print-active .header h1 {
-    color: #000 !important;
-}
-
-.resume.print-active .header-text .job-title {
-    color: #333 !important;
-}
-
-.resume.print-active .contact-info {
-    color: #000 !important;
-}
-
-.resume.print-active .contact-info a {
-    color: #000 !important;
-}
-
-.resume.print-active .contact-info a:hover {
-    color: #333 !important;
-}
-
-.resume.print-active .section {
-    background-color: white !important;
-    color: #000 !important;
-    border-bottom: 1px solid #eee !important;
-    margin-bottom: 1rem !important;
-}
-
-.resume.print-active .section-header {
-    color: #000 !important;
-}
-
-.resume.print-active .section-header::before {
-    color: #000 !important;
-}
-
-.resume.print-active .timeline-line {
-    background: #000 !important;
-}
-
-.resume.print-active .timeline-dot {
-    background: #000 !important;
-    border: 3px solid white !important;
-}
-
-.resume.print-active .timeline-content {
-    background: white !important;
-    border: 1px solid #ddd !important;
-    color: #000 !important;
-}
-
-.resume.print-active .item-date {
-    background-color: #f5f5f5 !important;
-    color: #000 !important;
-}
-
-.resume.print-active .item-title {
-    color: #000 !important;
-}
-
-.resume.print-active .item-company {
-    color: #333 !important;
-}
-
-.resume.print-active .item-description {
-    color: #000 !important;
-}
-
-.resume.print-active .item-description p::before {
-    background: #000 !important;
-}
-
-.resume.print-active .skill-item {
-    background: white !important;
-    color: #000 !important;
-    border: 1px solid #ddd !important;
-}
-
-.resume.print-active .strength-dot {
-    background: #e0e0e0 !important;
-}
-
-.resume.print-active .strength-dot.filled {
-    background: #000 !important;
-}
-
-.resume.print-active .certification-item {
-    color: #000 !important;
-    border-bottom: 1px solid #eee !important;
-}
-
-.resume.print-active .cert-icon {
-    color: #000 !important;
-}
-
-.resume.print-active .project-technologies {
-    color: #000 !important;
-}
-
-.resume.print-active .lang-icon {
-    color: #000 !important;
-}
-
-.resume.print-active .print-btn,
-.resume.print-active .resume-print-control,
-.resume.print-active .footer-content {
+  /* Hide the print button */
+  .resume-print-control,
+  .print-btn {
     display: none !important;
-}
+  }
 
-.resume.print-active .resume .section-header.collapsed::after {
+  /* Force all collapsed content to be visible */
+  .resume .content {
+    display: block !important;
+    grid-template-rows: 1fr !important;
+    opacity: 1 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .resume .content > div {
+    overflow: visible !important;
+  }
+
+  .resume .section-header::after {
     display: none !important;
-}
+  }
 
-/* Fontes otimizadas para impressão */
-.resume.print-active {
+  /* Resume container: white background, A4 width */
+  .resume {
+    background: white !important;
+    width: 210mm !important;
     font-family: "Times New Roman", Times, serif !important;
     font-size: 12pt;
-    line-height: 1.4 !important;
-    text-align: justify !important;
-}
+  }
 
-.resume.print-active h1 {
-    font-size: 20pt !important;
-}
+  /* Print colors */
+  .resume, .resume .container, .resume .section, .resume .timeline-content, .resume .skill-item {
+    background-color: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: 1px solid #eee !important;
+  }
 
-.resume.print-active h2 {
-    font-size: 16pt !important;
-}
+  .resume .timeline-dot {
+    background: #000 !important;
+    border-color: white !important;
+    box-shadow: none !important;
+  }
 
-.resume.print-active h3 {
-    font-size: 15pt !important;
-}
+  .resume .strength-dot.filled {
+    background: #000 !important;
+  }
 
-.resume.print-active h4 {
-    font-size: 14pt !important;
-}
-
-.resume.print-active .item-title {
-    font-size: 1.1em !important;
-}
-
-.resume.print-active .item-company {
-    font-size: 0.95em !important;
-    font-weight: 500 !important;
-}
-
-.resume.print-active .item-description p {
-    font-size: 0.95em !important;
-    margin-bottom: 0.75em !important;
-}
-
-@page {
-    margin: 1cm;
-    size: A4;
+  /* Remove hover/transition effects */
+  .resume .section,
+  .resume .section-header,
+  .resume .timeline-item,
+  .resume .timeline-content,
+  .resume .timeline-dot {
+    transition: none !important;
+    transform: none !important;
+  }
 }
