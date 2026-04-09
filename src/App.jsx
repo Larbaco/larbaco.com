@@ -8,6 +8,7 @@ import About from "./pages/about";
 import Projects from "./pages/projects";
 import Contact from "./pages/contact";
 import Resume from "./pages/resume";
+import HiddenResume from "./pages/hidden-resume";
 import NavLink from "./components/NavLink";
 import logo from './assets/images/logo.png';
 import "./global.css";
@@ -95,8 +96,11 @@ function App() {
         <meta name="twitter:image" content={`${import.meta.env.BASE_URL}images/og-global.jpg`} />
       </Helmet>
       <Router>
-        <div className="main-div">
-          {/* Header Section */}
+        <Routes>
+          <Route path="/hidden-resume" element={<HiddenResume />} />
+          <Route path="/*" element={
+            <div className="main-div">
+              {/* Header Section */}
           <div className="topSide">
             <nav className="navbar">
               <div className="navbar-brand">
@@ -162,6 +166,8 @@ function App() {
           </div>
           <Footer />
         </div>
+        } />
+        </Routes>
       </Router>
     </LanguageContext.Provider>
   );

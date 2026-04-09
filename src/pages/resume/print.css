@@ -1,7 +1,7 @@
 /* ====== PRINT OVERRIDES ====== */
 @media print {
   @page {
-    margin: 1.5cm;
+    margin: 0;
     size: A4;
   }
 
@@ -43,12 +43,14 @@
     display: none !important;
   }
 
-  /* Resume container: white background, A4 width */
+  /* Resume container: white background, full width */
   .resume {
     background: white !important;
-    width: 210mm !important;
+    width: 100% !important;
+    padding: 10mm 15mm !important;
     font-family: "Times New Roman", Times, serif !important;
     font-size: 12pt;
+    box-sizing: border-box !important;
   }
 
   /* Print colors */
@@ -104,11 +106,7 @@
     transform: none !important;
   }
 
-  /* Avoid breaking inside sections and items */
-  .resume .section {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
+  /* Avoid breaking inside items */
 
   .resume .timeline-item {
     break-inside: avoid;
