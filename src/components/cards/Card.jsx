@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 function Card({ item, onClick }) {
   return (
-    <div className="d-inline-block p-card" onClick={() => onClick(item)}>
+    <div className="p-card" onClick={() => onClick(item)}>
       <img className="p-card-image" src={item.imgSrc} alt={item.title} />
       {item.selected && (
         <CardInfo

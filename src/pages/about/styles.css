@@ -1,0 +1,16 @@
+.page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-6);
+}
+
+.about-page {
+  text-align: center;
+}
+
+.about-page h3 {
+  font-family: var(--font-mono);
+  font-size: var(--type-xl);
+  color: var(--text-primary);
+  margin-bottom: var(--space-5);
+}

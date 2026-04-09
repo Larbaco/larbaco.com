@@ -1,0 +1,81 @@
+/* ====== PRINT OVERRIDES ====== */
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: A4;
+  }
+
+  /* Hide non-resume page elements */
+  .topSide,
+  .hero-cont,
+  .footer-div {
+    display: none !important;
+  }
+
+  /* Reset bottomSide layout for print (resume lives inside it) */
+  .bottomSide {
+    display: block !important;
+    position: static !important;
+    padding: 0 !important;
+    min-height: auto !important;
+  }
+
+  /* Hide the print button */
+  .resume-print-control,
+  .print-btn {
+    display: none !important;
+  }
+
+  /* Force all collapsed content to be visible */
+  .resume .content {
+    display: block !important;
+    grid-template-rows: 1fr !important;
+    opacity: 1 !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .resume .content > div {
+    overflow: visible !important;
+  }
+
+  .resume .section-header::after {
+    display: none !important;
+  }
+
+  /* Resume container: white background, A4 width */
+  .resume {
+    background: white !important;
+    width: 210mm !important;
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 12pt;
+  }
+
+  /* Print colors */
+  .resume, .resume .container, .resume .section, .resume .timeline-content, .resume .skill-item {
+    background-color: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: 1px solid #eee !important;
+  }
+
+  .resume .timeline-dot {
+    background: #000 !important;
+    border-color: white !important;
+    box-shadow: none !important;
+  }
+
+  .resume .strength-dot.filled {
+    background: #000 !important;
+  }
+
+  /* Remove hover/transition effects */
+  .resume .section,
+  .resume .section-header,
+  .resume .timeline-item,
+  .resume .timeline-content,
+  .resume .timeline-dot {
+    transition: none !important;
+    transform: none !important;
+  }
+}

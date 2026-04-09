@@ -1,69 +1,90 @@
+.page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-6);
+}
+
 .github-invader {
-    --main-color: #24292e; /* GitHub's dark color */
-    --glow-color: #6e5494; /* GitHub's purple */
-    position: relative;
-    width: 150px;
-    margin: 2rem auto;
-  }
-  
-  .antenna {
-    position: absolute;
-    width: 4px;
-    background: var(--main-color);
-    height: 30px;
-    top: -30px;
-  }
-  .antenna.left { left: 30%; transform: rotate(-10deg); }
-  .antenna.right { right: 30%; transform: rotate(10deg); }
-  
-  .head {
-    background: var(--main-color);
-    width: 100px;
-    height: 100px;
-    border-radius: 15px;
-    position: relative;
-    margin: 0 auto;
-    box-shadow: 0 0 15px var(--glow-color);
-  }
-  
-  .eye {
-    width: 20px;
-    height: 30px;
-    background: #fff;
-    position: absolute;
-    top: 25px;
-    border-radius: 5px;
-  }
-  .eye.left { left: 15px; }
-  .eye.right { right: 15px; }
-  
-  .mouth {
-    width: 50px;
-    height: 10px;
-    background: #fff;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 5px;
-  }
-  
-  .version-tag {
-    position: absolute;
-    /* bottom: -25px; */
-    right: -10px;
-    background: var(--glow-color);
-    color: white;
-    padding: 2px 8px;
-    border-radius: 3px;
-    font-family: monospace;
-    font-size: 0.8rem;
-  }
-  .github-invader {
-    animation: float 3s ease-in-out infinite;
-  }
-  
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
+  --main-color: var(--bg-surface);
+  --glow-color: var(--accent-blue);
+  position: relative;
+  width: 150px;
+  margin: var(--space-6) auto;
+}
+
+.github-invader::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 5px;
+  background: var(--main-color);
+  border-radius: 0 0 2px 2px;
+}
+
+.antenna {
+  position: absolute;
+  width: 4px;
+  background: var(--main-color);
+  height: 30px;
+  top: -30px;
+}
+
+.antenna.left { left: 30%; transform: rotate(-10deg); }
+.antenna.right { right: 30%; transform: rotate(10deg); }
+
+.head {
+  background: var(--bg-canvas);
+  border: 2px solid var(--border-default);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 0 0 15px var(--glow-color);
+}
+
+.eye {
+  width: 20px;
+  height: 30px;
+  background: #fff;
+  position: absolute;
+  top: 25px;
+  border-radius: 5px;
+}
+
+.eye.left { left: 15px; }
+.eye.right { right: 15px; }
+
+.mouth {
+  width: 50px;
+  height: 10px;
+  background: #fff;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}
+
+.version-tag {
+  position: absolute;
+  right: -10px;
+  background: var(--accent-blue);
+  color: white;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.github-invader {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

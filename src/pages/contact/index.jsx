@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 
 export default function contact() {
-  return <div className="github-invader">
+  return <div className="page-container contact-page github-invader">
     <div className="antenna left"></div>
     <div className="antenna right"></div>
     <div className="head">

@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import Card from "../cards/Card";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import PropTypes from "prop-types";
+import spaceInvadersImg from "../../assets/images/spaceInvaders300x200.png";
+import portfolioImg from "../../assets/images/portfolio300x200.png";
+import sparseMatrixImg from "../../assets/images/sparseMatrix300x200.png";
 
 function Carousel() {
   const [items, setItems] = useState([
     {
       id: 0,
       title: "InVaser_Spade",
-      imgSrc: require("../assets/images/spaceInvaders300x200.png"),
+      imgSrc: spaceInvadersImg,
       subTitle: "Space invaders implementation in python and OpenGL for studies purposes",
       link: "https://github.com/Larbaco/InVaser_Spade",
       selected: false,
@@ -17,7 +17,7 @@ function Carousel() {
     {
       id: 1,
       title: "Portfolio",
-      imgSrc: require("../assets/images/portfolio300x200.png"),
+      imgSrc: portfolioImg,
       subTitle: "Source code of this portfolio",
       link: "https://github.com/Larbaco/larbaco.com",
       selected: false,
@@ -26,7 +26,7 @@ function Carousel() {
       id: 2,
       title: "Sparse Matrix",
       subTitle: "Sparse Matrix implementation for studies purposes",
-      imgSrc: require("../assets/images/sparseMatrix300x200.png"),
+      imgSrc: sparseMatrixImg,
       link: "https://github.com/Larbaco/MatrizEsparsa",
       selected: false,
     }
@@ -37,17 +37,17 @@ function Carousel() {
       ...item,
       selected: item.id === id ? !item.selected : false
     }));
-    
+
     setItems(updatedItems);
-    
+
     if (updatedItems[id].selected) {
       window.open(updatedItems[id].link, "_blank");
     }
   };
 
   return (
-    <Container fluid>
-      <Row className="justify-content-center">
+    <div className="carousel-container">
+      <div className="carousel-row">
         {items.map(item => (
           <Card
             key={item.id}
@@ -55,8 +55,8 @@ function Carousel() {
             onClick={handleCardClick}
           />
         ))}
-      </Row>
-    </Container>
+      </div>
+    </div>
   );
 }
 
