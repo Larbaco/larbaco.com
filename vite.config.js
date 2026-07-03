@@ -5,7 +5,6 @@ export default defineConfig({
   plugins: [
     react({
       include: [
-        '**/*.js',
         '**/*.jsx',
         '**/*.mjs',
       ],

@@ -67,6 +67,19 @@ export default function Resume() {
     languages: language === 'pt' ? 'Idiomas' : 'Languages'
   };
 
+  const sectionOrder = ['summary', 'experience', 'skills', 'education', 'certifications', 'projects', 'languages'];
+  const getSectionNumber = (section) => String(sectionOrder.indexOf(section) + 1).padStart(2, '0');
+
+  const resumeCopy = {
+    label: language === 'pt' ? '03 / Currículo' : '03 / Resume',
+    contact: language === 'pt' ? 'Contato direto' : 'Direct contact',
+    overview: language === 'pt' ? 'Visão rápida' : 'Snapshot',
+    experience: language === 'pt' ? 'Experiências' : 'Experience',
+    skills: language === 'pt' ? 'Skills técnicas' : 'Technical skills',
+    certifications: language === 'pt' ? 'Certificações' : 'Certifications',
+    projects: language === 'pt' ? 'Projetos' : 'Projects'
+  };
+
   const contactItems = [
     { icon: faMapMarkerAlt, text: resumeData?.baseInfo?.contact?.location },
     { icon: faPhone, text: resumeData?.baseInfo?.contact?.phone, url: resumeData?.baseInfo?.contact?.phone ? `tel:+${resumeData.baseInfo.contact.phone.replace(/\D/g, '')}` : null },
@@ -92,12 +105,13 @@ export default function Resume() {
               />
             </div>
             <div className="header-text">
+              <p className="resume-label">{resumeCopy.label}</p>
               <h1>{resumeData.baseInfo.name}</h1>
               <p className="job-title">{resumeData.baseInfo.title}</p>
             </div>
           </div>
-          <div className="vertical-bar"></div>
           <div className="header-right">
+            <span className="contact-group">{resumeCopy.contact}</span>
             <div className="contact-info">
               {contactItems.map((item, index) => item.text && (
                 <p key={index}>
@@ -113,6 +127,26 @@ export default function Resume() {
           </div>
         </header>
 
+        <section className="resume-overview" aria-label={resumeCopy.overview}>
+          <p>{resumeCopy.overview}</p>
+          <div>
+            <span>{resumeData.experience.length}</span>
+            <strong>{resumeCopy.experience}</strong>
+          </div>
+          <div>
+            <span>{resumeData.technical_skills?.length || 0}</span>
+            <strong>{resumeCopy.skills}</strong>
+          </div>
+          <div>
+            <span>{resumeData.certifications?.length || 0}</span>
+            <strong>{resumeCopy.certifications}</strong>
+          </div>
+          <div>
+            <span>{resumeData.projects?.length || 0}</span>
+            <strong>{resumeCopy.projects}</strong>
+          </div>
+        </section>
+
         {/* 1. Summary */}
         <section className="section">
           <h2
@@ -123,9 +157,10 @@ export default function Resume() {
             tabIndex={0}
             aria-expanded={!collapsedSections.summary}
           >
-            {sectionTitles.summary}
+            <span className="section-index">{getSectionNumber('summary')}</span>
+            <span>{sectionTitles.summary}</span>
           </h2>
-          <div className={`content ${collapsedSections.summary ? 'collapsed' : ''}`}>
+          <div className={`content ${collapsedSections.summary ? 'collapsed' : ''}`} aria-hidden={collapsedSections.summary}>
             <div><p>{resumeData.professional_summary}</p></div>
           </div>
         </section>
@@ -140,9 +175,10 @@ export default function Resume() {
             tabIndex={0}
             aria-expanded={!collapsedSections.experience}
           >
-            {sectionTitles.experience}
+            <span className="section-index">{getSectionNumber('experience')}</span>
+            <span>{sectionTitles.experience}</span>
           </h2>
-          <div className={`content ${collapsedSections.experience ? 'collapsed' : ''}`}>
+          <div className={`content ${collapsedSections.experience ? 'collapsed' : ''}`} aria-hidden={collapsedSections.experience}>
             <div>
               <div className="experience-timeline">
                 {resumeData.experience.map((exp, index) => (
@@ -174,9 +210,10 @@ export default function Resume() {
               tabIndex={0}
               aria-expanded={!collapsedSections.skills}
             >
-              {sectionTitles.skills}
+              <span className="section-index">{getSectionNumber('skills')}</span>
+              <span>{sectionTitles.skills}</span>
             </h2>
-            <div className={`content ${collapsedSections.skills ? 'collapsed' : ''}`}>
+            <div className={`content ${collapsedSections.skills ? 'collapsed' : ''}`} aria-hidden={collapsedSections.skills}>
               <div>
                 <div className="skills-container">
                   {resumeData.technical_skills.map((skill, index) => (
@@ -208,9 +245,10 @@ export default function Resume() {
             tabIndex={0}
             aria-expanded={!collapsedSections.education}
           >
-            {sectionTitles.education}
+            <span className="section-index">{getSectionNumber('education')}</span>
+            <span>{sectionTitles.education}</span>
           </h2>
-          <div className={`content ${collapsedSections.education ? 'collapsed' : ''}`}>
+          <div className={`content ${collapsedSections.education ? 'collapsed' : ''}`} aria-hidden={collapsedSections.education}>
             <div>
               {resumeData.education.map((edu, index) => (
                 <div key={index} className="education-item">
@@ -234,9 +272,10 @@ export default function Resume() {
               tabIndex={0}
               aria-expanded={!collapsedSections.certifications}
             >
-              {sectionTitles.certifications}
+              <span className="section-index">{getSectionNumber('certifications')}</span>
+              <span>{sectionTitles.certifications}</span>
             </h2>
-            <div className={`content ${collapsedSections.certifications ? 'collapsed' : ''}`}>
+            <div className={`content ${collapsedSections.certifications ? 'collapsed' : ''}`} aria-hidden={collapsedSections.certifications}>
               <div>
                 <ul className="certifications-list">
                   {resumeData.certifications.map((cert, index) => (
@@ -262,9 +301,10 @@ export default function Resume() {
               tabIndex={0}
               aria-expanded={!collapsedSections.projects}
             >
-              {sectionTitles.projects}
+              <span className="section-index">{getSectionNumber('projects')}</span>
+              <span>{sectionTitles.projects}</span>
             </h2>
-            <div className={`content ${collapsedSections.projects ? 'collapsed' : ''}`}>
+            <div className={`content ${collapsedSections.projects ? 'collapsed' : ''}`} aria-hidden={collapsedSections.projects}>
               <div>
                 {resumeData.projects.map((project, index) => (
                   <div key={index} className="project-item">
@@ -293,9 +333,10 @@ export default function Resume() {
               tabIndex={0}
               aria-expanded={!collapsedSections.languages}
             >
-              {sectionTitles.languages}
+              <span className="section-index">{getSectionNumber('languages')}</span>
+              <span>{sectionTitles.languages}</span>
             </h2>
-            <div className={`content ${collapsedSections.languages ? 'collapsed' : ''}`}>
+            <div className={`content ${collapsedSections.languages ? 'collapsed' : ''}`} aria-hidden={collapsedSections.languages}>
               <div>
                 <ul className="languages-list">
                   {resumeData.languages.map((lang, index) => (

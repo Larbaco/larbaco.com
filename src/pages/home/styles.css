@@ -1,145 +1,210 @@
-/* --- CSS VARIABLES & THEME --- */
-:root {
-  --orbit-max-width: 500px;
-  --icon-bg: var(--bg-surface-elevated, #1a1a1a);
-  --primary: var(--color-primary, #007bff);
-  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* --- LAYOUT --- */
 .page-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
   box-sizing: border-box;
-  overflow-x: hidden;
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: var(--space-6);
+  width: 100%;
 }
 
 .home-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 120px);
-  gap: 3rem;
+  padding: var(--space-7) var(--space-6);
+  text-align: left;
 }
 
-/* --- THE DIAMOND GRID --- */
-.home-icons-div {
+.home-shell {
+  align-items: start;
   display: grid;
-  /* Forces 3 identical columns and 3 identical rows */
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-
-  width: 100%;
-  max-width: var(--orbit-max-width);
-  /* The "Secret Sauce": This ensures the grid itself is always square */
-  aspect-ratio: 1 / 1;
-
-  margin: 0 auto;
-  align-items: center;
-  justify-items: center;
-  gap: 1rem;
+  gap: var(--space-8);
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
 }
 
-/* Positioning logic based on [0:tool, 1:code, 2:thiago, 3:heart, 4:github] */
-.home-icons:nth-child(1) { grid-area: 1 / 2; } /* Top */
-.home-icons:nth-child(2) { grid-area: 2 / 1; } /* Left */
-.center-icon           { grid-area: 2 / 2; } /* CENTER */
-.home-icons:nth-child(4) { grid-area: 2 / 3; } /* Right */
-.home-icons:nth-child(5) { grid-area: 3 / 2; } /* Bottom */
-
-/* --- CIRCLE STYLING (The Anti-Oval Fix) --- */
-.home-icons, .center-icon {
-  border-radius: 50%;
-  display: block;
-  transition: all var(--transition);
-  /* This prevents the "Ovaling" by locking the proportions */
-  aspect-ratio: 1 / 1;
+.home-hero {
+  max-width: 760px;
 }
 
-.home-icons {
-  width: 80%; /* Takes up 80% of the grid cell's width */
-  height: auto; /* Height follows width because of aspect-ratio */
-  background: var(--icon-bg);
-  border: 1px solid var(--border-default, #333);
-  padding: 15%; /* Inside space for the icon img */
-  object-fit: contain;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+.home-label {
+  color: var(--accent-green);
+  font-family: var(--font-mono);
+  font-size: var(--type-sm);
+  margin: 0 0 var(--space-3);
+  text-transform: uppercase;
 }
 
-.center-icon {
-  width: 100%; /* Fills the center grid cell completely */
-  height: auto;
-  object-fit: cover;
-  border: 4px solid var(--icon-bg);
-  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+.home-hero h1 {
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  margin: 0 0 var(--space-4);
 }
 
-/* --- INTERACTIONS --- */
-.home-icons:hover {
-  transform: scale(1.1) translateY(-5px);
-  border-color: var(--primary);
-  background: var(--bg-surface-hover, #222);
-  cursor: pointer;
+.home-role {
+  color: var(--accent-blue);
+  font-family: var(--font-mono);
+  font-size: var(--type-xl);
+  line-height: 1.4;
+  margin: 0 0 var(--space-5);
 }
 
-.center-icon:hover {
-  transform: scale(1.03);
-}
-
-/* --- QUOTE BOX --- */
-.resumoHome {
-  width: 100%;
-  max-width: 600px;
-  padding: 2.5rem;
-  text-align: center;
-  background: var(--bg-surface, #111);
-  border: 1px solid var(--border-default, #333);
-  border-radius: 20px;
-  box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
-}
-
-.resumoHome h3 {
-  font-family: var(--font-mono, monospace);
-  font-size: 1.3rem;
-  line-height: 1.6;
+.home-summary {
+  color: var(--text-primary);
+  font-size: var(--type-xl);
+  line-height: 1.65;
   margin: 0;
-  color: var(--text-primary, #fff);
-  letter-spacing: -0.5px;
 }
 
-/* --- NAVBAR LOGO FIX --- */
-.navbar-brand, .logo-container {
+.home-hero blockquote {
+  border-left: 3px solid var(--accent-green);
+  color: var(--text-secondary);
+  font-size: var(--type-base);
+  line-height: 1.7;
+  margin: var(--space-5) 0 0;
+  padding-left: var(--space-4);
+}
+
+.home-actions {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
 }
 
-/* Guaranteed spacing so logo never touches "INÍCIO" */
-.navbar-brand img, .logo-container img {
-  margin-right: 24px !important;
+.home-action {
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: var(--type-sm);
+  padding: var(--space-3) var(--space-4);
+  text-decoration: none;
+  transition: border-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), background var(--transition-fast);
 }
 
-/* --- RESPONSIVE BREAKPOINTS --- */
-@media (max-width: 768px) {
-  :root {
-    --orbit-max-width: 420px;
-  }
-  .resumoHome {
-    padding: 1.5rem;
-    max-width: 90%;
-  }
+.home-action.primary {
+  background: var(--accent-green);
+  border-color: var(--accent-green);
+  color: var(--bg-canvas);
 }
 
-@media (max-width: 480px) {
-  :root {
-    --orbit-max-width: 300px;
+.home-action.secondary,
+.home-action.neutral {
+  background: var(--bg-surface);
+  color: var(--accent-blue);
+}
+
+.home-action:hover {
+  transform: translateY(-1px);
+}
+
+.home-action.secondary:hover,
+.home-action.neutral:hover {
+  border-color: var(--accent-blue);
+  color: var(--text-primary);
+}
+
+.home-meta {
+  border-top: 1px solid var(--border-default);
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: var(--space-7) 0 0;
+  padding-top: var(--space-4);
+}
+
+.home-meta div {
+  min-width: 0;
+}
+
+.home-meta dt {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  margin-bottom: var(--space-1);
+  text-transform: uppercase;
+}
+
+.home-meta dd {
+  color: var(--text-primary);
+  font-size: var(--type-sm);
+  margin: 0;
+}
+
+.home-command {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.home-stack,
+.home-focus {
+  background:
+    linear-gradient(180deg, rgba(88, 166, 255, 0.08), transparent 42%),
+    var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-5);
+}
+
+.home-stack p,
+.home-focus p {
+  color: var(--accent-green);
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  letter-spacing: 0.04em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.home-stack div {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.home-stack span {
+  border-bottom: 1px solid var(--border-default);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  padding-bottom: var(--space-3);
+}
+
+.home-stack span:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.home-focus-grid {
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: var(--space-5);
+}
+
+.home-focus article {
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+}
+
+.home-focus h2 {
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--type-sm);
+  margin: 0 0 var(--space-2);
+}
+
+.home-focus span {
+  color: var(--text-secondary);
+  font-size: var(--type-xs);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .home-shell,
+  .home-meta {
+    grid-template-columns: 1fr;
   }
-  .home-page {
-    gap: 2rem;
-  }
-  .resumoHome h3 {
-    font-size: 1.1rem;
+
+  .home-hero h1 {
+    font-size: 3rem;
   }
 }

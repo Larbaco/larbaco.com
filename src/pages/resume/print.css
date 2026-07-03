@@ -22,7 +22,9 @@
 
   /* Hide the print button */
   .resume-print-control,
-  .print-btn {
+  .print-btn,
+  .resume-overview,
+  .resume-label {
     display: none !important;
   }
 
@@ -54,7 +56,7 @@
   }
 
   /* Print colors */
-  .resume, .resume .container, .resume .section, .resume .timeline-content, .resume .skill-item {
+  .resume, .resume .container, .resume .section, .resume .header-left, .resume .header-right, .resume .timeline-content, .resume .skill-item {
     background-color: white !important;
     color: black !important;
     box-shadow: none !important;
@@ -84,8 +86,14 @@
   /* Section headers — remove interactive styling in print */
   .resume .section-header {
     cursor: default !important;
+    display: block !important;
     user-select: auto !important;
     outline: none !important;
+  }
+
+  .resume .section-index {
+    color: #555 !important;
+    margin-right: 6pt;
   }
 
   /* Show URLs after links for print reference */

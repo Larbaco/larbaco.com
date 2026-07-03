@@ -39,7 +39,29 @@ export const APP_CONFIG = {
           title: "Discover",
           subTitle: "Some facets of me",
           text: "",
-          quote: "Life is fluid and fleeting, we must do our best in everything we do."
+          quote: "Life is fluid and fleeting, we must do our best in everything we do.",
+          name: "Thiago Cabral",
+          role: "Backend Developer and DevOps Analyst",
+          summary: "I build reliable systems, automate workflows and support applications where operational clarity matters.",
+          ctas: [
+            { label: "Resume", href: "/resume", variant: "primary" },
+            { label: "Projects", href: "/projects", variant: "secondary" },
+            { label: "Contact", href: "/contact", variant: "neutral" }
+          ],
+          meta: [
+            { label: "Location", value: "Brazil" },
+            { label: "Timezone", value: "UTC-3" },
+            { label: "Status", value: "Open to opportunities" }
+          ],
+          stackTitle: "Stack snapshot",
+          stack: ["Java", "Linux", "GitLab", "Argo CD", "OpenShift", "SQL"],
+          focusTitle: "Current focus",
+          focus: [
+            { title: "Backend", description: "APIs and services" },
+            { title: "Linux Apps", description: "Support and troubleshooting" },
+            { title: "CI/CD", description: "Delivery automation" },
+            { title: "GitOps", description: "Git-driven deployments" }
+          ]
         },
         about: {
           title: "Backend Developer and DevOps Analyst",
@@ -152,7 +174,29 @@ export const APP_CONFIG = {
           title: "Descubra",
           subTitle: "Algumas facetas minhas",
           text: "",
-          quote: "A vida é fluida e passageira, devemos dar o nosso melhor em tudo que fazemos."
+          quote: "A vida é fluida e passageira, devemos dar o nosso melhor em tudo que fazemos.",
+          name: "Thiago Cabral",
+          role: "Desenvolvedor Backend e Analista DevOps",
+          summary: "Construo sistemas confiáveis, automatizo fluxos de trabalho e apoio aplicações onde clareza operacional é essencial.",
+          ctas: [
+            { label: "Currículo", href: "/resume", variant: "primary" },
+            { label: "Projetos", href: "/projects", variant: "secondary" },
+            { label: "Contato", href: "/contact", variant: "neutral" }
+          ],
+          meta: [
+            { label: "Localização", value: "Brasil" },
+            { label: "Fuso", value: "UTC-3" },
+            { label: "Status", value: "Aberto a oportunidades" }
+          ],
+          stackTitle: "Stack principal",
+          stack: ["Java", "Linux", "GitLab", "Argo CD", "OpenShift", "SQL"],
+          focusTitle: "Foco atual",
+          focus: [
+            { title: "Backend", description: "APIs e serviços" },
+            { title: "Linux Apps", description: "Suporte e troubleshooting" },
+            { title: "CI/CD", description: "Automação de entrega" },
+            { title: "GitOps", description: "Deploys orientados por Git" }
+          ]
         },
         about: {
           title: "Desenvolvedor Backend e Analista DevOps",

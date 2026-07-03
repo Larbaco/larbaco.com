@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './styles.css';
 
 export default function HiddenResume() {
@@ -10,155 +10,170 @@ export default function HiddenResume() {
     const loadResumeData = async () => {
       try {
         const response = await fetch(`${import.meta.env.BASE_URL}data/${language}.json`);
-        if (!response.ok) throw new Error('Failed to load data');
+        if (!response.ok) throw new Error(language === 'pt' ? 'Falha ao carregar dados' : 'Failed to load data');
         const data = await response.json();
         setResumeData(data);
       } catch (err) {
         setError(err.message);
       }
     };
+
     loadResumeData();
   }, [language]);
 
-  if (error) return <div>Error: {error}</div>;
-  if (!resumeData) return <div>Loading...</div>;
-
-  const handlePrint = () => {
-      window.print();
-  };
+  if (error) return <div className="hidden-resume-status">Error: {error}</div>;
+  if (!resumeData) return <div className="hidden-resume-status">Loading...</div>;
 
   const isPt = language === 'pt';
+  const contact = resumeData.baseInfo.contact;
+  const selectedProjects = resumeData.projects?.slice(0, 4) || [];
+
   const sectionTitles = {
     summary: isPt ? 'Resumo Profissional' : 'Professional Summary',
-    experience: isPt ? 'Experiência Profissional' : 'Work Experience',
-    education: isPt ? 'Formação' : 'Education',
-    skills: isPt ? 'Habilidades Técnicas' : 'Technical Skills',
-    certifications: isPt ? 'Certificações' : 'Certifications',
-    projects: isPt ? 'Projetos Notáveis' : 'Notable Projects',
+    skills: isPt ? 'Competencias Tecnicas' : 'Technical Skills',
+    experience: isPt ? 'Experiencia Profissional' : 'Professional Experience',
+    certifications: isPt ? 'Certificacoes' : 'Certifications',
+    education: isPt ? 'Formacao' : 'Education',
+    projects: isPt ? 'Projetos Selecionados' : 'Selected Projects',
     languages: isPt ? 'Idiomas' : 'Languages'
   };
 
+  const labels = {
+    print: isPt ? 'Imprimir curriculo' : 'Print resume',
+    technologies: isPt ? 'Tecnologias' : 'Technologies'
+  };
+
+  const splitSkill = (skill) => {
+    if (!skill.name.includes(':')) {
+      return {
+        category: skill.name,
+        detail: skill.description
+      };
+    }
+
+    const [category, ...rest] = skill.name.split(':');
+    const stack = rest.join(':').trim();
+
+    return {
+      category,
+      detail: [stack, skill.description].filter(Boolean).join(' - ')
+    };
+  };
+
   return (
-    <div className="hidden-resume-page">
-      <div className="page">
-        {/* HEADER */}
-        <div className="header">
-          <h1>{resumeData.baseInfo.name}</h1>
-          <p className="title">{resumeData.baseInfo.title}</p>
-          <div className="contact">
-            <span>{resumeData.baseInfo.contact.location}</span>
-            <a href={`mailto:${resumeData.baseInfo.contact.email}`}>{resumeData.baseInfo.contact.email}</a>
-            <span>{resumeData.baseInfo.contact.phone}</span>
-            <a href={resumeData.baseInfo.contact.linkedin}>{resumeData.baseInfo.contact.linkedin.replace('https://', '').replace('www.', '')}</a>
-            {resumeData.baseInfo.contact.website && <a href={resumeData.baseInfo.contact.website}>{resumeData.baseInfo.contact.website.replace('https://', '')}</a>}
+    <main className="hidden-resume-page">
+      <article className="resume-sheet" aria-label={`${resumeData.baseInfo.name} resume`}>
+        <header className="resume-header">
+          <div>
+            <h1>{resumeData.baseInfo.name}</h1>
+            <p className="resume-title">{resumeData.baseInfo.title}</p>
           </div>
-        </div>
 
-        <div className="content">
-          {/* SUMMARY */}
+          <address className="resume-contact">
+            <span>{contact.location}</span>
+            <a href={`mailto:${contact.email}`}>{contact.email}</a>
+            <a href={`tel:+${contact.phone.replace(/\D/g, '')}`}>{contact.phone}</a>
+            <a href={contact.linkedin}>{contact.linkedin.replace('https://', '').replace('www.', '')}</a>
+            {contact.website && <a href={contact.website}>{contact.website.replace('https://', '')}</a>}
+          </address>
+        </header>
+
+        <section className="resume-section">
           <h2>{sectionTitles.summary}</h2>
-          <p className="summary">{resumeData.professional_summary}</p>
+          <p className="resume-summary">{resumeData.professional_summary}</p>
+        </section>
 
-          {/* SKILLS */}
-          {resumeData.technical_skills && (
-            <>
-              <h2>{sectionTitles.skills}</h2>
-              <div className="skills-grid">
-                {resumeData.technical_skills.map((skill, i) => {
-                   let catName = skill.name;
-                   let catItems = skill.description;
-                   if (skill.name.includes(':')) {
-                      const split = skill.name.split(':');
-                      catName = split[0];
-                      catItems = split[1].trim() + (skill.description ? ` — ${skill.description}` : '');
-                   }
-                   return (
-                     <div key={i} className="skill-cat">
-                       <strong>{catName}</strong>
-                       <span>{catItems}</span>
-                     </div>
-                   );
-                })}
-              </div>
-            </>
-          )}
+        {resumeData.technical_skills && (
+          <section className="resume-section">
+            <h2>{sectionTitles.skills}</h2>
+            <div className="skills-list">
+              {resumeData.technical_skills.map((skill, index) => {
+                const parsedSkill = splitSkill(skill);
 
-          {/* EXPERIENCE */}
+                return (
+                  <p key={index}>
+                    <strong>{parsedSkill.category}:</strong> {parsedSkill.detail}
+                  </p>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        <section className="resume-section">
           <h2>{sectionTitles.experience}</h2>
-          {resumeData.experience.map((exp, i) => (
-            <div key={i} className="job">
-              <div className="job-header">
-                <span><span className="job-role">{exp.title}</span> — <span className="job-company">{exp.company}</span></span>
-                <span className="job-date">{exp.dates}</span>
+          {resumeData.experience.map((experience, index) => (
+            <section key={index} className="resume-entry">
+              <div className="entry-heading">
+                <div>
+                  <h3>{experience.title}</h3>
+                  <p>{experience.company}</p>
+                </div>
+                <span>{experience.dates}</span>
               </div>
               <ul>
-                {exp.description.map((desc, j) => (
-                  <li key={j}>{desc}</li>
+                {experience.description.map((description, itemIndex) => (
+                  <li key={itemIndex}>{description}</li>
                 ))}
               </ul>
-            </div>
+            </section>
           ))}
+        </section>
 
-          {/* EDUCATION */}
+        {resumeData.certifications && (
+          <section className="resume-section">
+            <h2>{sectionTitles.certifications}</h2>
+            <ul className="compact-list">
+              {resumeData.certifications.map((certification, index) => (
+                <li key={index}>{typeof certification === 'string' ? certification : certification.name}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <section className="resume-section">
           <h2>{sectionTitles.education}</h2>
-          {resumeData.education.map((edu, i) => (
-             <div key={i} className="job">
-               <div className="job-header">
-                 <span><span className="job-role">{edu.degree}</span> — <span className="job-company">{edu.institution}</span></span>
-                 {edu.dates && <span className="job-date">{edu.dates}</span>}
-               </div>
-             </div>
-          ))}
-
-          {/* CERTIFICATIONS */}
-          {resumeData.certifications && (
-            <>
-              <h2>{sectionTitles.certifications}</h2>
-              <ul className="cert-list">
-                {resumeData.certifications.map((cert, i) => (
-                  <li key={i}>{typeof cert === 'string' ? cert : cert.name}</li>
-                ))}
-              </ul>
-            </>
-          )}
-
-          {/* PROJECTS */}
-          {resumeData.projects && (
-            <>
-              <h2>{sectionTitles.projects}</h2>
-              <div className="projects-grid">
-                {resumeData.projects.map((proj, i) => (
-                  <div key={i} className="project">
-                    <strong>{proj.name}</strong> — {proj.description}
-                  </div>
-                ))}
+          {resumeData.education.map((education, index) => (
+            <section key={index} className="resume-entry compact-entry">
+              <div className="entry-heading">
+                <div>
+                  <h3>{education.degree}</h3>
+                  <p>{education.institution}</p>
+                </div>
+                {education.dates && <span>{education.dates}</span>}
               </div>
-            </>
-          )}
+            </section>
+          ))}
+        </section>
 
-          {/* LANGUAGES */}
-          {resumeData.languages && (
-            <>
-              <h2>{sectionTitles.languages}</h2>
-              <p className="languages">
-                {resumeData.languages.map((lang, i) => {
-                  const parts = lang.split(' ');
-                  const b = parts.shift();
-                  const rest = parts.join(' ');
-                  return (
-                    <span key={i}>
-                      {i > 0 && <span> &nbsp;&nbsp;|&nbsp;&nbsp; </span>}
-                      <strong>{b}</strong> {rest}
-                    </span>
-                  );
-                })}
-              </p>
-            </>
-          )}
+        {selectedProjects.length > 0 && (
+          <section className="resume-section">
+            <h2>{sectionTitles.projects}</h2>
+            {selectedProjects.map((project, index) => (
+              <section key={index} className="resume-entry compact-entry">
+                <h3>{project.name}</h3>
+                {project.description && <p>{project.description}</p>}
+                {project.technologies && (
+                  <p className="project-tech">
+                    <strong>{labels.technologies}:</strong> {project.technologies}
+                  </p>
+                )}
+              </section>
+            ))}
+          </section>
+        )}
 
-        </div>
-      </div>
-      <button className="print-control" onClick={handlePrint}>Print Resume</button>
-    </div>
+        {resumeData.languages && (
+          <section className="resume-section">
+            <h2>{sectionTitles.languages}</h2>
+            <p className="languages">{resumeData.languages.join(' | ')}</p>
+          </section>
+        )}
+      </article>
+
+      <button className="print-control" type="button" onClick={() => window.print()}>
+        {labels.print}
+      </button>
+    </main>
   );
 }

@@ -1,33 +1,63 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { LanguageContext } from "../../App";
 import "./styles.css";
-import toolIcon from "../../assets/images/tool.png";
-import codeIcon from "../../assets/images/code.png";
-import thiagoImg from "../../assets/images/thiago.jpg";
-import heartIcon from "../../assets/images/heart.png";
-import githubIcon from "../../assets/images/github.png";
 
 const Home = () => {
   const { language, translations } = useContext(LanguageContext);
   const content = translations[language].content.home;
-  const images = [
-    { id: 0, src: toolIcon, className: "home-icons" },
-    { id: 1, src: codeIcon, className: "home-icons" },
-    { id: 2, src: thiagoImg, className: "center-icon" },
-    { id: 3, src: heartIcon, className: "home-icons" },
-    { id: 4, src: githubIcon, className: "home-icons" }
-  ];
 
   return (
     <div className="page-container home-page">
-      <div className="home-icons-div">
-        {images.map((img) => (
-          <img key={img.id} src={img.src} alt="" className={img.className} />
-        ))}
-      </div>
-      <div className="resumoHome">
-        <h3>{content.quote}</h3>
-      </div>
+      <section className="home-shell">
+        <div className="home-hero">
+          <p className="home-label">01 / {language === "pt" ? "Início" : "Home"}</p>
+          <h1>{content.name}</h1>
+          <p className="home-role">{content.role}</p>
+          <p className="home-summary">{content.summary}</p>
+          <blockquote>{content.quote}</blockquote>
+
+          <div className="home-actions" aria-label={language === "pt" ? "Ações principais" : "Primary actions"}>
+            {content.ctas.map((cta) => (
+              <Link key={cta.href} to={cta.href} className={`home-action ${cta.variant}`}>
+                {cta.label}
+              </Link>
+            ))}
+          </div>
+
+          <dl className="home-meta">
+            {content.meta.map((item) => (
+              <div key={item.label}>
+                <dt>{item.label}</dt>
+                <dd>{item.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        <aside className="home-command" aria-label={content.stackTitle}>
+          <div className="home-stack">
+            <p>{content.stackTitle}</p>
+            <div>
+              {content.stack.map((item) => (
+                <span key={item}>{item}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className="home-focus">
+            <p>{content.focusTitle}</p>
+            <div className="home-focus-grid">
+              {content.focus.map((item) => (
+                <article key={item.title}>
+                  <h2>{item.title}</h2>
+                  <span>{item.description}</span>
+                </article>
+              ))}
+            </div>
+          </div>
+        </aside>
+      </section>
     </div>
   );
 };
