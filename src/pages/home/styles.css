@@ -31,12 +31,12 @@
   /* Forces 3 identical columns and 3 identical rows */
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  
+
   width: 100%;
   max-width: var(--orbit-max-width);
   /* The "Secret Sauce": This ensures the grid itself is always square */
-  aspect-ratio: 1 / 1; 
-  
+  aspect-ratio: 1 / 1;
+
   margin: 0 auto;
   align-items: center;
   justify-items: center;
@@ -56,7 +56,7 @@
   display: block;
   transition: all var(--transition);
   /* This prevents the "Ovaling" by locking the proportions */
-  aspect-ratio: 1 / 1; 
+  aspect-ratio: 1 / 1;
 }
 
 .home-icons {

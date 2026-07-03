@@ -50,7 +50,7 @@ export default function HiddenResume() {
             <a href={`mailto:${resumeData.baseInfo.contact.email}`}>{resumeData.baseInfo.contact.email}</a>
             <span>{resumeData.baseInfo.contact.phone}</span>
             <a href={resumeData.baseInfo.contact.linkedin}>{resumeData.baseInfo.contact.linkedin.replace('https://', '').replace('www.', '')}</a>
-            {resumeData.baseInfo.contact.website && <a href={`https://${resumeData.baseInfo.contact.website}`}>{resumeData.baseInfo.contact.website}</a>}
+            {resumeData.baseInfo.contact.website && <a href={resumeData.baseInfo.contact.website}>{resumeData.baseInfo.contact.website.replace('https://', '')}</a>}
           </div>
         </div>
 

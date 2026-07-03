@@ -69,7 +69,7 @@ export default function Resume() {
 
   const contactItems = [
     { icon: faMapMarkerAlt, text: resumeData?.baseInfo?.contact?.location },
-    { icon: faPhone, text: resumeData?.baseInfo?.contact?.phone, url: resumeData?.baseInfo?.contact?.phone ? `tel:${resumeData.baseInfo.contact.phone.replace(/\D/g, '')}` : null },
+    { icon: faPhone, text: resumeData?.baseInfo?.contact?.phone, url: resumeData?.baseInfo?.contact?.phone ? `tel:+${resumeData.baseInfo.contact.phone.replace(/\D/g, '')}` : null },
     { icon: faEnvelope, text: resumeData?.baseInfo?.contact?.email, url: `mailto:${resumeData?.baseInfo?.contact?.email}` },
     { icon: faGlobe, text: resumeData?.baseInfo?.contact?.website, url: resumeData?.baseInfo?.contact?.website },
     { icon: faLinkedin, text: resumeData?.baseInfo?.contact?.linkedin, url: resumeData?.baseInfo?.contact?.linkedin }
@@ -85,9 +85,9 @@ export default function Resume() {
         <header className="header">
           <div className="header-left">
             <div className="profile-picture">
-              <img 
-                src={`${import.meta.env.BASE_URL}images/profile.jpg`} 
-                alt={resumeData.baseInfo.name} 
+              <img
+                src={`${import.meta.env.BASE_URL}images/profile.png`}
+                alt={resumeData.baseInfo.name}
                 onError={(e) => e.target.src = `${import.meta.env.BASE_URL}images/logo192.png`}
               />
             </div>

@@ -40,5 +40,5 @@ All rights reserved. This is a personal project — not open for contributions.
 
 ---
 
-**Thiago Cabral** — DevOps Analyst & Full Stack Developer
-[LinkedIn](https://linkedin.com/in/thiagoo.cabral) · [GitHub](https://github.com/Larbaco)
+**Thiago Cabral** — Backend Developer and DevOps Analyst
+[LinkedIn](https://www.linkedin.com/in/thiagoocabral/) · [GitHub](https://github.com/Larbaco)

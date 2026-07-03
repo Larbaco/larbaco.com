@@ -41,6 +41,31 @@ export const APP_CONFIG = {
           text: "",
           quote: "Life is fluid and fleeting, we must do our best in everything we do."
         },
+        about: {
+          title: "Backend Developer and DevOps Analyst",
+          intro: "I work at the intersection of backend development, Linux application support and DevOps practices for public-sector and mission-critical environments.",
+          details: [
+            "My background includes projects for Banco Central do Brasil, the Brazilian National Mining Agency and the Brazilian Ministry of Labor and Employment, with hands-on work in Java, REST APIs, GitLab, Argo CD, Azure DevOps, Docker, OpenShift, SQL and PowerShell.",
+            "I focus on reliable application operations, clear deployment workflows, practical automation and technical documentation that helps teams keep services running with less ambiguity."
+          ],
+          highlights: [
+            "Backend and REST API development",
+            "Linux application support",
+            "CI/CD, GitOps and OpenShift deployments",
+            "ITSM and ITIL-based service operations"
+          ]
+        },
+        contact: {
+          title: "Contact",
+          intro: "Use any of the channels below to reach me.",
+          items: [
+            { label: "Email", value: "thiagoo.cabral@gmail.com", href: "mailto:thiagoo.cabral@gmail.com" },
+            { label: "Phone", value: "+55 66 99956-4016", href: "tel:+5566999564016" },
+            { label: "LinkedIn", value: "linkedin.com/in/thiagoocabral", href: "https://www.linkedin.com/in/thiagoocabral/" },
+            { label: "GitHub", value: "github.com/Larbaco", href: "https://github.com/Larbaco" },
+            { label: "Website", value: "larbaco.com", href: "https://larbaco.com" }
+          ]
+        },
         // Add other pages similarly
       }
     },
@@ -58,6 +83,31 @@ export const APP_CONFIG = {
           subTitle: "Algumas facetas minhas",
           text: "",
           quote: "A vida é fluida e passageira, devemos dar o nosso melhor em tudo que fazemos."
+        },
+        about: {
+          title: "Desenvolvedor Backend e Analista DevOps",
+          intro: "Atuo na interseção entre desenvolvimento backend, suporte a aplicações Linux e práticas DevOps em ambientes públicos e de missão crítica.",
+          details: [
+            "Minha trajetória inclui projetos para o Banco Central do Brasil, Agência Nacional de Mineração e Ministério do Trabalho e Emprego, com atuação prática em Java, APIs REST, GitLab, Argo CD, Azure DevOps, Docker, OpenShift, SQL e PowerShell.",
+            "Meu foco é apoiar operações confiáveis, fluxos de implantação claros, automações pragmáticas e documentação técnica que reduza ambiguidade na sustentação de serviços."
+          ],
+          highlights: [
+            "Desenvolvimento backend e APIs REST",
+            "Suporte a aplicações Linux",
+            "CI/CD, GitOps e deploys em OpenShift",
+            "ITSM e operação baseada em ITIL"
+          ]
+        },
+        contact: {
+          title: "Contato",
+          intro: "Use qualquer um dos canais abaixo para falar comigo.",
+          items: [
+            { label: "E-mail", value: "thiagoo.cabral@gmail.com", href: "mailto:thiagoo.cabral@gmail.com" },
+            { label: "Telefone", value: "+55 66 99956-4016", href: "tel:+5566999564016" },
+            { label: "LinkedIn", value: "linkedin.com/in/thiagoocabral", href: "https://www.linkedin.com/in/thiagoocabral/" },
+            { label: "GitHub", value: "github.com/Larbaco", href: "https://github.com/Larbaco" },
+            { label: "Site", value: "larbaco.com", href: "https://larbaco.com" }
+          ]
         },
         // Add other pages similarly
       }
@@ -82,18 +132,18 @@ function App() {
       <Helmet>
         {/* Default meta tags for entire site */}
         <title>{APP_CONFIG.meta.titles[language]}</title>
-        <meta name="description" content="Thiago Cabral - DevOps Analyst & Full Stack Developer" />
+        <meta name="description" content="Thiago Cabral - Backend Developer and DevOps Analyst" />
 
         {/* Open Graph */}
         <meta property="og:site_name" content="Thiago Cabral Portfolio" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${import.meta.env.BASE_URL}images/og-global.jpg`} />
+        <meta property="og:image" content={`${import.meta.env.BASE_URL}images/logo512.png`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={`${import.meta.env.BASE_URL}images/og-global.jpg`} />
+        <meta name="twitter:image" content={`${import.meta.env.BASE_URL}images/logo512.png`} />
       </Helmet>
       <Router>
         <Routes>

@@ -1,131 +1,120 @@
 {
   "baseInfo": {
     "name": "Thiago Oliveira Cabral",
-    "title": "Analista DevOps",
+    "title": "Desenvolvedor Backend e Analista DevOps",
     "contact": {
       "location": "Goiânia, Goiás, BR",
       "phone": "+55 66 99956-4016",
       "email": "thiagoo.cabral@gmail.com",
-      "website": "larbaco.com",
+      "website": "https://larbaco.com",
       "linkedin": "https://www.linkedin.com/in/thiagoocabral/"
     }
   },
-  "professional_summary": "Analista DevOps e Desenvolvedor Full Stack com expertise em pipelines CI/CD, orquestração Kubernetes e gestão de serviços baseada em ITIL. Experiência comprovada em otimização de fluxos de implantação, redução de incidentes e automação de processos para infraestrutura escalável. Habilidoso em colaboração multifuncional para entregar soluções de software eficientes e confiáveis.",
+  "professional_summary": "Desenvolvedor Backend e Analista DevOps com experiência em ambientes tecnológicos do setor público e de missão crítica. Minha trajetória combina desenvolvimento backend, automação, CI/CD, suporte a aplicações Linux e práticas DevOps, com atuação em Java, APIs REST, GitLab, Argo CD, Azure DevOps, Docker, OpenShift, SQL e PowerShell. Atuei em projetos para o Banco Central do Brasil, ANM - Agência Nacional de Mineração - e MTE - Ministério do Trabalho e Emprego, apoiando sistemas em que confiabilidade, clareza e continuidade operacional são essenciais.",
   "technical_skills": [
     {
-      "name": "OpenText Service Manager",
+      "name": "Backend: Java / APIs REST / SQL",
+      "strength": 4,
+      "description": "Desenvolvimento e manutenção de aplicações backend, integrações REST e consultas SQL para sistemas corporativos."
+    },
+    {
+      "name": "DevOps: GitLab / Argo CD / Azure DevOps",
+      "strength": 4,
+      "description": "Gestão de pipelines, fluxos GitOps, automação de build/deploy e acompanhamento de entregas em ambientes críticos."
+    },
+    {
+      "name": "DevOps: Docker / OpenShift / Kubernetes",
+      "strength": 4,
+      "description": "Build de imagens, deploy de aplicações backend, suporte a workloads conteinerizados e operação em OpenShift/Kubernetes."
+    },
+    {
+      "name": "Linux e Aplicações",
+      "strength": 4,
+      "description": "Suporte a ambientes Linux, análise de logs, troubleshooting de aplicações e documentação técnica operacional."
+    },
+    {
+      "name": "Scripting: PowerShell / Python / Bash",
+      "strength": 4,
+      "description": "Automação de rotinas administrativas, apoio a pipelines e scripts para suporte a sistemas e ambientes."
+    },
+    {
+      "name": "ITSM: OpenText / Micro Focus Service Manager",
       "strength": 5,
-      "description": "Ferramenta principal para gestão de serviços ITIL"
+      "description": "Administração, customização e suporte a sistemas de gestão de serviços de TI baseados em ITIL."
     },
     {
-      "name": "Operações, Monitoramento e Gestão de Software: ITIL",
+      "name": "Operações: ITIL / Monitoramento / Continuidade",
       "strength": 5,
-      "description": "Profissional certificado com experiência diária de implementação"
+      "description": "Atuação em operação de serviços, análise de incidentes, melhoria de fluxos e sustentação de ambientes corporativos."
     },
     {
-      "name": "DevOps: Docker",
+      "name": "Infraestrutura: Redes / Active Directory / pfSense",
       "strength": 4,
-      "description": "Criação e gerenciamento de containers para ambientes de desenvolvimento e produção, integrados a pipelines CI/CD e orquestração Kubernetes."
-    },
-    {
-      "name": "DevOps: Kubernetes / OpenShift",
-      "strength": 4,
-      "description": "Orquestração de contêineres em ambientes críticos, Helm charts, escalabilidade e resiliência para aplicações em nuvem."
-    },
-    {
-      "name": "DevOps: Pipelines CI/CD",
-      "strength": 4,
-      "description": "Automação de build, teste e implantação para aplicações .NET e Node.js"
-    },
-    {
-      "name": "Operações, Monitoramento e Gestão de Software: Rede IPv4",
-      "strength": 4,
-      "description": "Gerenciamento de rede corporativa com 200+ dispositivos simultâneos"
-    },
-    {
-      "name": "Operações, Monitoramento e Gestão de Software: Active Directory",
-      "strength": 4,
-      "description": "Implementação de políticas de grupo para infraestrutura de impressão"
-    },
-    {
-      "name": "Segurança: Firewall",
-      "strength": 4,
-      "description": "Configuração e manutenção de soluções pfSense firewall"
-    },
-    {
-      "name": "Scripting: PowerShell / Python",
-      "strength": 4,
-      "description": "Administração Windows, automação de Service Manager e scripts em geral"
-    },
-    {
-      "name": "Linguagens: JavaScript / C# .NET",
-      "strength": 4,
-      "description": "Desenvolvimento web, customização de Service Manager e CI/CD para projetos .NET"
+      "description": "Experiência em redes corporativas, políticas de grupo, firewall pfSense e suporte a ambientes com alta quantidade de dispositivos."
     },
     {
       "name": "Engenharia de Prompt de IA",
       "strength": 5,
-      "description": "Criação e otimização de prompts estruturados para geração de código (Python, JS, Java, C, CSS), análise de dados e síntese de imagens usando LLMs (GPT-4, Claude, DeepSeek-R1) e modelos Stable Diffusion"
+      "description": "Criação de prompts estruturados para apoio a desenvolvimento, análise técnica, documentação, dados e geração de imagens."
     }
   ],
   "experience": [
     {
-      "title": "Analista DevOps",
-      "dates": "2026-01 - Presente",
+      "title": "Analista de Aplicações Linux e DevOps",
+      "dates": "2026-01 - 2026-06",
       "company": "Stefanini Brasil, Ministério do Trabalho e Emprego (MTE), Brasília, BR",
       "description": [
-        "Suporte Linux e de aplicações para infraestrutura do MTE, transferido da alocação na ANM após licença médica.",
-        "Instalação, configuração e manutenção de jumpserver Apache Guacamole para acesso remoto.",
-        "Suporte às operações da Equipe de Aplicação e serviços de infraestrutura do MTE."
+        "Atuação em suporte a aplicações Linux e práticas DevOps em ambiente do Ministério do Trabalho e Emprego.",
+        "Apoio a fluxos de implantação e sustentação utilizando GitLab e Argo CD, com foco em rastreabilidade, continuidade operacional e documentação técnica.",
+        "Análise de logs, troubleshooting de aplicações, suporte a ambientes de aplicação e colaboração com equipes técnicas para resolução de incidentes e melhorias operacionais."
       ]
     },
     {
       "title": "Analista DevOps",
-      "dates": "2024-03 - 2025-12",
+      "dates": "2024-02 - 2025-12",
       "company": "Stefanini Brasil, Agência Nacional de Mineração (ANM), Brasília, BR",
       "description": [
-        "Gerenciamento e otimização de pipelines CI/CD para aplicações .NET e Node.js em OpenShift/Kubernetes.",
-        "Gerenciamento de builds Docker e Helm charts para implantação de serviços geoespaciais SIG (ArcGIS Server).",
-        "Desenvolvimento de scripts PowerShell para provisionamento automatizado de agentes nos ambientes HML/PRD.",
-        "Configuração de VPN (FortiClient), certificados TLS cliente e módulos do sistema de documentos SEI.",
-        "Suporte de infraestrutura para ArcGIS Server, APIs REST e serviços Windows."
+        "Gestão e otimização de pipelines no Azure DevOps para aplicações backend em ambientes OpenShift.",
+        "Apoio a processos de build, deploy e sustentação de aplicações, com uso de Docker, OpenShift/Kubernetes e automações de apoio à operação.",
+        "Suporte técnico a ambientes de aplicação, análise de falhas, documentação de procedimentos e colaboração com equipes de desenvolvimento e infraestrutura."
       ]
     },
     {
-      "title": "Desenvolvedor Full Stack",
-      "dates": "2021-06 - 2024-02",
+      "title": "Desenvolvedor Backend e Analista de Sistemas",
+      "dates": "2021-06 - 2024-01",
       "company": "Stefanini Brasil, Banco Central do Brasil, Brasília, BR",
       "description": [
-        "Desenvolvimento e administração do Sistema de Gerenciamento de Serviços ITIL (Micro Focus Service Manager) no Banco Central, liderando gestão e manutenção com foco em eficiência e conformidade.",
-        "Manutenção de pipelines CI/CD para implantações .NET/Kubernetes e gerenciamento de redes TCP/IP e containers Docker.",
-        "Utilização de JavaScript, PowerShell e RAD para otimizar processos e garantir operação contínua do sistema."
+        "Desenvolvimento, administração e suporte ao sistema de gestão de serviços de TI baseado em Micro Focus/OpenText Service Manager no Banco Central do Brasil.",
+        "Análise de requisitos, customização de fluxos ITIL, automações e melhorias operacionais utilizando JavaScript, PowerShell, RAD e consultas relacionadas ao ambiente da aplicação.",
+        "Apoio à sustentação de ambiente crítico, documentação técnica, investigação de incidentes e melhoria de processos para garantir continuidade e clareza operacional."
       ]
     },
     {
-      "title": "Suporte T.I.",
+      "title": "Auxiliar Técnico de Suporte de TI",
       "dates": "2018-02 - 2020-02",
       "company": "Centro Universitário UniCathedral, Barra do Garças, BR",
       "description": [
-        "Implementação do HelpDesk GLPI e suporte de hardware/software para desktops e servidores.",
-        "Gerenciamento de redes com fio e sem fio com firewall pfSense, suportando mais de 500 dispositivos simultâneos.",
-        "Gerenciamento de impressoras multifuncionais via Active Directory com políticas de grupo personalizadas.",
-        "Manutenção de sistema telefônico PBX Asterisk e equipamentos audiovisuais de sala de aula."
+        "Suporte e melhoria da infraestrutura de TI da instituição, garantindo o funcionamento de desktops, servidores, redes, sistemas de monitoramento e impressoras multifuncionais.",
+        "Suporte a hardware e software, upgrades planejados, monitoramento de sistemas, administração de redes cabeadas e sem fio, firewall pfSense e ambiente Windows/Active Directory.",
+        "Acompanhamento de ambiente com mais de 500 dispositivos conectados simultaneamente, gestão de NVR Intelbras, digitalização em rede e políticas personalizadas via Active Directory."
       ]
     },
     {
-      "title": "Suporte T.I.",
+      "title": "Suporte de TI",
       "dates": "2017-08 - 2017-12",
       "company": "Única Consultores de Engenharia Urbana, Cuiabá, BR",
       "description": [
-        "Garanti o funcionamento adequado e propus melhorias dentro do escopo de TI do escritório através de manutenção planejada e monitoramento de sistemas."
+        "Suporte ao ambiente de TI do escritório, apoiando manutenção de equipamentos, acompanhamento de sistemas, melhorias planejadas e suporte aos usuários.",
+        "Verificação do funcionamento dos recursos de TI, apoio a manutenções preventivas e corretivas, acompanhamento de demandas internas e sugestão de melhorias para estabilidade operacional."
       ]
     },
     {
-      "title": "Tutor",
+      "title": "Tutor de Programação em Python",
       "dates": "2012-09 - 2015-08",
       "company": "UFMT",
       "description": [
-        "Atividades extracurriculares para esclarecer dúvidas e auxiliar estudantes na área de Linguagens de Programação Comerciais."
+        "Tutoria acadêmica em disciplina com foco em Python, apoiando alunos na resolução de dúvidas, revisão de conceitos e acompanhamento de atividades extracurriculares relacionadas a desenvolvimento de software.",
+        "Apoio ao aprendizado de lógica de programação, exercícios práticos e conceitos de Python no mesmo período em que aprofundei minha base em ciência da computação e programação com Python por meio do certificado MITx/edX."
       ]
     }
   ],
@@ -137,27 +126,27 @@
   ],
   "certifications": [
     "DevOps Foundation - PeopleCert",
-    "ITIL Foundation v4 - Axelos",
-    "Introdução à Ciência da Computação e Programação com Python - MITx",
+    "IT Service Management ITIL v4 Foundation - AXELOS/PeopleCert",
+    "Introdução à Ciência da Computação e Programação com Python - MITx/edX",
     "Inventário de Rede com OCS Inventory NG - Udemy",
     "Service Desk e Inventário com GLPI - Udemy"
   ],
   "projects": [
     {
       "name": "Website de Portfólio - Larbaco.com",
-      "description": "Portfólio moderno para desenvolvedor construído com React.js e Firebase, apresentando design responsivo e suporte multilíngue (EN/PT). Implementa renderização dinâmica de currículos, vitrines de projetos com estudos de caso de NEAT AI/matriz esparsa, e otimização SEO através do React Helmet. Demo: https://larbaco.com | Código: https://github.com/Larbaco/larbaco.com"
+      "description": "Portfólio pessoal construído com React e Vite, com suporte multilíngue, renderização dinâmica de currículo, páginas de projetos e otimização SEO via React Helmet. Demo: https://larbaco.com | Código: https://github.com/Larbaco/larbaco.com"
     },
     {
       "name": "Zelda-NeAI",
-      "description": "Recriação do NES Zelda com integração NEAT AI - Motor de jogo em Python usando biblioteca arcade com mapas baseados em tiles, sistemas de colisão e transições entre múltiplas salas, projetado para evoluir redes neurais para navegação autônoma em masmorras e combate através de NeuroEvolução de Topologias Aumentantes (algoritmo genético). Código: https://github.com/Larbaco/Zelda-NeAI"
+      "description": "Recriação do NES Zelda com integração NEAT AI - motor de jogo em Python usando biblioteca arcade, mapas baseados em tiles, colisão, transições entre salas e evolução de agentes para navegação autônoma. Código: https://github.com/Larbaco/Zelda-NeAI"
     },
     {
       "name": "MatrizEsparsa",
-      "description": "Implementação acadêmica em C de operações com matrizes esparsas usando armazenamento com lista encadeada, apresentando algoritmos de adição/multiplicação eficientes em memória e interface CLI. Código: https://github.com/Larbaco/MatrizEsparsa"
+      "description": "Implementação acadêmica em C de operações com matrizes esparsas usando lista encadeada, com algoritmos de adição/multiplicação eficientes em memória e interface CLI. Código: https://github.com/Larbaco/MatrizEsparsa"
     },
     {
       "name": "Editor de Currículo - Auto-hospedado",
-      "description": "Editor de currículos bilíngue (EN/PT) com backend Node.js/Express e frontend vanilla JavaScript, apresentando gerenciamento de dados JSON em tempo real, integração de API REST e arquitetura CSS modular. Código: https://github.com/Larbaco/resume-editor"
+      "description": "Editor de currículos bilíngue com backend Node.js/Express, frontend JavaScript, gerenciamento de dados JSON, API REST e arquitetura CSS modular. Código: https://github.com/Larbaco/resume-editor"
     },
     {
       "name": "Snake-NEAT",

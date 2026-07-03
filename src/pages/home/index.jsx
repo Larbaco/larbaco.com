@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../../App";
-// import Hero from "../../components/layout/Hero";
 import "./styles.css";
 import toolIcon from "../../assets/images/tool.png";
 import codeIcon from "../../assets/images/code.png";
