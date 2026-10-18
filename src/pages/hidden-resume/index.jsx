@@ -30,16 +30,16 @@ export default function HiddenResume() {
 
   const sectionTitles = {
     summary: isPt ? 'Resumo Profissional' : 'Professional Summary',
-    skills: isPt ? 'Competencias Tecnicas' : 'Technical Skills',
-    experience: isPt ? 'Experiencia Profissional' : 'Professional Experience',
-    certifications: isPt ? 'Certificacoes' : 'Certifications',
-    education: isPt ? 'Formacao' : 'Education',
+    skills: isPt ? 'Competências Técnicas' : 'Technical Skills',
+    experience: isPt ? 'Experiência Profissional' : 'Professional Experience',
+    certifications: isPt ? 'Certificações' : 'Certifications',
+    education: isPt ? 'Formação' : 'Education',
     projects: isPt ? 'Projetos Selecionados' : 'Selected Projects',
     languages: isPt ? 'Idiomas' : 'Languages'
   };
 
   const labels = {
-    print: isPt ? 'Imprimir curriculo' : 'Print resume',
+    print: isPt ? 'Imprimir currículo' : 'Print resume',
     technologies: isPt ? 'Tecnologias' : 'Technologies'
   };
 
