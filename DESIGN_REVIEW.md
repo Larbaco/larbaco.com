@@ -122,6 +122,40 @@ This pass follows the full skill text. Process: plan, review against the brief, 
 2. **All-caps panel titles and numbered eyebrows** on the other pages. Remove them page by page, or keep them as the house style.
 3. **Navbar and footer** still need approval (see Phase 1).
 
+## Correction plan
+
+Scope: fixes only. Design improvements (all-caps labels, accent color, card layouts, resume density) are left out until Thiago decides on them.
+
+**Status:** applied on this branch, pending Thiago's review: 1 (mobile menu), 2 (footer translation), 4 (print button padding), 5 (print button label), 6 (document language), 12 (control border token on four components) and 13 (flag hit area). Section numbering follows option (a), the menu order. The sub-labels in Sobre became `03.1` and `03.2` so they do not clash with the page number `03`. Not applied: 3 (fixed footer covering content), 7 (meta description), 8 (per-page titles), 9 (`<h1>` on Projetos, Sobre and Contato), 10 (heading clipping) and 11 (focus and reduced motion).
+
+Each step is verified with `npm run build`, `npx vitest run`, and a Playwright check at 390px and 1366px for every route (Início, Projetos, Currículo, Sobre, Contato).
+
+### Group 1: needs approval (navbar and footer)
+
+1. **Mobile menu (≤992px).** `.navbar-nav` is `display: none` in `src/global.css` (media query near line 296). Add a toggle button with `aria-expanded` and `aria-controls` in the navbar in `src/App.jsx`. Close it on route change and on Escape. *Check:* all five routes are reachable at 390px by keyboard and touch.
+2. **Footer text in English.** `src/components/layout/Footer.jsx` hardcodes "Made by Thiago Cabral 2026". Move it to a translation key in `APP_CONFIG.translations` (`src/App.jsx`) and mirror it in the JSON files, following the three-place rule. *Check:* PT shows the PT text and EN shows the EN text.
+3. **Fixed footer covers content on mobile.** `.footer-div` is `position: fixed`. Give `.main-div` bottom padding that matches the footer height, or make the footer part of the page flow. *Check:* the Contato "Copiar" button for the phone is fully visible at 390px.
+
+### Group 2: no approval needed beyond this plan
+
+4. **Print button covers the last block on mobile (Currículo).** Add bottom padding to the resume page so the floating button does not cover the e-mail and site rows. Do not hide the button. *Check:* the last row is reachable at 390px.
+5. **Print button label in English.** `src/components/PrintButton.jsx` has `aria-label="View Print Format"`. Pass the language in and use a translation key. *Check:* the PT page has a PT label.
+6. **Document language.** `index.html` has `lang="en"`, but the default is PT. Set `lang` to `pt-BR` and update `document.documentElement.lang` in `App.jsx` when the language changes. *Check:* the attribute matches the visible language after switching.
+7. **Meta description in English.** Move the `<meta name="description">` in `App.jsx` to the translations, in both languages.
+8. **Per-page titles.** Every route has the same `<title>`. Set a page title per route, using translation keys. *Check:* each route has its own title in the browser tab.
+9. **Missing `<h1>`.** Projetos, Sobre and Contato use an `<h2>` as the page title. Change the element to `<h1>` and keep the existing CSS selectors working, so the page looks the same. *Check:* one `<h1>` per page, and the visual result is unchanged.
+10. **Heading clipping on mobile (Início).** Re-apply the title size fix that was reverted earlier: `font-size: clamp(2.25rem, 6vw, 5.5rem)` and no 48px override at ≤900px. *Check:* "Thiago Cabral" fits at 390px and the desktop size is unchanged at 1366px.
+11. **Keyboard focus and reduced motion.** Re-apply the `:focus-visible` outline and the `prefers-reduced-motion` block that were in commit `23d2849` and were removed from this branch. *Check:* Tab moves a visible outline across the navbar and the page links, and the status dot stops pulsing when reduced motion is set.
+
+### Group 3: contrast and touch targets
+
+12. **Control borders below 3:1.** Border color `#30363d` on `#161b22` measures about 1.42:1. WCAG 1.4.11 asks for 3:1 on borders that identify controls. Measure a candidate with a script, then change only the border token used by secondary buttons and cards. *Check:* the measured ratio is at least 3:1 and the cards still read as separate from the surface.
+13. **Language flags.** The flag images are about 24x21px. Keep the image size and enlarge the clickable area to at least 24x24px, and ideally 44x44px, using padding or a pseudo-element. *Check:* the hit area is measured in Playwright.
+
+### Not in this plan
+
+- Section numbering (`01 / …`) and the other design choices in the review. These need a design decision first.
+
 ## Text changes
 
 Any copy change must update all three places: `APP_CONFIG.translations` in `src/App.jsx`, `src/pages/projects/{en,pt}.json`, and `public/data/{en,pt}.json`.
