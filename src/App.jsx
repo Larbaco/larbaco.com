@@ -1,4 +1,4 @@
-import React, { useState, createContext } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 
@@ -14,6 +14,8 @@ import logo from './assets/images/logo.png';
 import "./global.css";
 import usFlag from "./assets/images/us.png";
 import brFlag from "./assets/images/br.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export const LanguageContext = createContext();
 
@@ -33,6 +35,14 @@ export const APP_CONFIG = {
         about: "ABOUT",
         contact: "CONTACT",
         resume: "RESUME"
+      },
+      footer: {
+        madeBy: "Made by"
+      },
+      ui: {
+        openMenu: "Open menu",
+        closeMenu: "Close menu",
+        printFormat: "View Print Format"
       },
       content: {
         home: {
@@ -169,6 +179,14 @@ export const APP_CONFIG = {
         contact: "CONTATO",
         resume: "CURRÍCULO"
       },
+      footer: {
+        madeBy: "Feito por"
+      },
+      ui: {
+        openMenu: "Abrir menu",
+        closeMenu: "Fechar menu",
+        printFormat: "Ver formato de impressão"
+      },
       content: {
         home: {
           title: "Descubra",
@@ -303,6 +321,11 @@ function App() {
   const [language, setLanguage] = useState(() => {
     return localStorage.getItem('language') || APP_CONFIG.meta.defaultLanguage;
   });
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   document.title = APP_CONFIG.meta.titles[language];
 
@@ -344,7 +367,22 @@ function App() {
                 </Link>
               </div>
 
-              <ul className="navbar-nav">
+              <button
+                type="button"
+                className="nav-toggle"
+                aria-expanded={menuOpen}
+                aria-controls="primary-navigation"
+                aria-label={APP_CONFIG.translations[language].ui[menuOpen ? 'closeMenu' : 'openMenu']}
+                onClick={() => setMenuOpen((open) => !open)}
+              >
+                <FontAwesomeIcon icon={menuOpen ? faXmark : faBars} />
+              </button>
+
+              <ul
+                id="primary-navigation"
+                className={`navbar-nav ${menuOpen ? 'is-open' : ''}`}
+                onClick={() => setMenuOpen(false)}
+              >
                 <li>
                   <NavLink to="/" name="home" />
                 </li>

@@ -11,7 +11,7 @@ export default function about() {
     <div className="page-container about-page">
       <section className="about-hero">
         <div className="about-intro">
-          <p className="about-label">01 / {language === "pt" ? "Sobre" : "About"}</p>
+          <p className="about-label">03 / {language === "pt" ? "Sobre" : "About"}</p>
           <h3>{content.title}</h3>
           <p className="about-lead">{content.intro}</p>
 
@@ -34,7 +34,7 @@ export default function about() {
 
       <section className="about-timeline" aria-label={content.timelineTitle}>
         <div className="section-heading">
-          <p>02 / {content.timelineTitle}</p>
+          <p>03.1 / {content.timelineTitle}</p>
         </div>
         <div className="timeline-track">
           {content.timeline.map((item) => (
@@ -49,7 +49,7 @@ export default function about() {
 
       <section className="about-sections" aria-label={language === "pt" ? "Resumo profissional" : "Professional overview"}>
         <div className="section-heading">
-          <p>03 / {content.workflowTitle}</p>
+          <p>03.2 / {content.workflowTitle}</p>
         </div>
         <div className="workflow-grid">
           {content.workflow.map((item) => (

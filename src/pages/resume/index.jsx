@@ -71,7 +71,7 @@ export default function Resume() {
   const getSectionNumber = (section) => String(sectionOrder.indexOf(section) + 1).padStart(2, '0');
 
   const resumeCopy = {
-    label: language === 'pt' ? '03 / Currículo' : '03 / Resume',
+    label: language === 'pt' ? '05 / Currículo' : '05 / Resume',
     contact: language === 'pt' ? 'Contato direto' : 'Direct contact',
     overview: language === 'pt' ? 'Visão rápida' : 'Snapshot',
     experience: language === 'pt' ? 'Experiências' : 'Experience',

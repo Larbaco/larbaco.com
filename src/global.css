@@ -6,6 +6,7 @@
   --bg-canvas: #0d1117;
   --bg-surface: #161b22;
   --border-default: #30363d;
+  --border-control: #6e7681;
   --text-primary: #e6edf3;
   --text-secondary: #8b949e;
   --accent-green: #00ff9d;
@@ -178,12 +179,29 @@ body {
 }
 
 .flag-btn {
+  align-items: center;
   background: none;
   border: none;
-  padding: 0;
   cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0;
   position: relative;
   transition: opacity var(--transition-fast);
+}
+
+.nav-toggle {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: none;
+  font-size: var(--type-lg);
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0;
 }
 
 .flag-img {
@@ -288,8 +306,37 @@ body {
     padding: var(--space-4) 0;
   }
 
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+  }
+
   .navbar-nav {
     display: none;
+  }
+
+  .navbar-nav.is-open {
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-default);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    left: 0;
+    padding: var(--space-3) var(--space-5);
+    position: absolute;
+    right: 0;
+    top: 100%;
+  }
+
+  .navbar-nav.is-open li {
+    border-top: 1px solid var(--border-default);
+  }
+
+  .navbar-nav.is-open .nav-link {
+    display: block;
+    padding: var(--space-3) 0;
   }
 }
 

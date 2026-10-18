@@ -210,7 +210,7 @@
 
 .about-cta-links a {
   background: var(--bg-surface);
-  border: 1px solid var(--border-default);
+  border: 1px solid var(--border-control);
   border-radius: var(--radius-sm);
   color: var(--accent-blue);
   font-family: var(--font-mono);
