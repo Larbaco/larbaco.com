@@ -126,7 +126,7 @@ This pass follows the full skill text. Process: plan, review against the brief, 
 
 Scope: fixes only. Design improvements (all-caps labels, accent color, card layouts, resume density) are left out until Thiago decides on them.
 
-**Status:** applied on this branch, pending Thiago's review: 1 (mobile menu), 2 (footer translation), 4 (print button padding), 5 (print button label), 6 (document language), 12 (control border token on four components) and 13 (flag hit area). Section numbering follows option (a), the menu order. The sub-labels in Sobre became `03.1` and `03.2` so they do not clash with the page number `03`. Not applied: 3 (fixed footer covering content), 7 (meta description), 8 (per-page titles), 9 (`<h1>` on Projetos, Sobre and Contato), 10 (heading clipping) and 11 (focus and reduced motion).
+**Status:** applied on this branch and approved by Thiago: 1 (mobile menu), 2 (footer translation), 4 (print button padding), 5 (print button label), 6 (document language), 12 (control border token on four components) and 13 (flag hit area). Section numbering follows option (a), the menu order. The sub-labels in Sobre became `03.1` and `03.2` so they do not clash with the page number `03`. Not applied: 3 (fixed footer covering content), 7 (meta description), 8 (per-page titles), 9 (`<h1>` on Projetos, Sobre and Contato), 10 (heading clipping) and 11 (focus and reduced motion).
 
 Each step is verified with `npm run build`, `npx vitest run`, and a Playwright check at 390px and 1366px for every route (Início, Projetos, Currículo, Sobre, Contato).
 
