@@ -165,7 +165,7 @@
 }
 
 .project-action {
-  border: 1px solid var(--border-default);
+  border: 1px solid var(--border-control);
   border-radius: var(--radius-sm);
   font-family: var(--font-mono);
   font-size: var(--type-xs);

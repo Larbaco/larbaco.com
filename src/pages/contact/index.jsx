@@ -24,7 +24,7 @@ export default function contact() {
     <div className="page-container contact-page">
       <section className="contact-shell">
         <div className="contact-header">
-          <p className="contact-label">01 / {content.title}</p>
+          <p className="contact-label">04 / {content.title}</p>
           <h3>{content.title}</h3>
           <p className="contact-intro">{content.intro}</p>
           <p className="contact-availability">{content.availability}</p>

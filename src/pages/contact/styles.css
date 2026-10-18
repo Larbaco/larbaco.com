@@ -129,7 +129,7 @@
 .contact-card button {
   align-self: flex-start;
   background: transparent;
-  border: 1px solid var(--border-default);
+  border: 1px solid var(--border-control);
   border-radius: var(--radius-sm);
   color: var(--text-primary);
   cursor: pointer;

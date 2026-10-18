@@ -520,6 +520,10 @@
     padding: var(--space-5) var(--space-4);
   }
 
+  .resume {
+    padding-bottom: 6rem;
+  }
+
   .resume .header,
   .resume-overview,
   .skills-container {
